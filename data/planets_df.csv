@@ -1,0 +1,932 @@
+,Designation,Quadrant,Affiliation,Status
+0,635483,a,-,uninhabitable
+1,8876584,a,-,uncharted
+2,8876684,a,-,uncharted
+3,88769584,a,-,uninhabitable
+4,1 Centauri,b,-,uninhabitable
+5,11 Leonis Minoris,b,-,uninhabitable
+6,13 Ceti,a,-,uninhabitable
+7,14 Eridani,b,-,uninhabitable
+8,16 Cygni,a,-,uninhabitable
+9,18 Puppis,b,-,uninhabitable
+10,31 Aquilae,a,-,uninhabitable
+11,38 Lyncis,b,-,uninhabitable
+12,38 Ursae Majoris,a,-,uninhabitable
+13,39 Leonis,b,-,uninhabitable
+14,39 Serpentis,a,-,uninhabitable
+15,39-J,b,-,uninhabitable
+16,45-8574,a,-,uninhabitable
+17,47 Ursae Majoris,a,-,uninhabitable
+18,51 Pegasi,a,-,uninhabitable
+19,53 Aquarii,a,-,uninhabitable
+20,58 Ophiuchi,a,-,uninhabitable
+21,59 Eridani,b,-,uninhabitable
+22,59 Virginis,b,-,uninhabitable
+23,61 Virginis,b,-,uninhabitable
+24,70 Ophiuchi,a,-,uninhabitable
+25,70 Virginis,b,-,uninhabitable
+26,7168-L,a,-,uncharted
+27,74 Orionis,b,-,uninhabitable
+28,81 Cancri,b,-,uninhabitable
+29,82 Eridani,b,-,uninhabitable
+30,99 Herculis,a,-,uninhabitable
+31,Aaamazzara,a,UFP,inhabited
+32,Abraxas,b,Romulan Star Empire,inhabited
+33,Acamar,b,Neutral,inhabited
+34,Achernar,b,Romulan Star Empire,inhabited
+35,Adelphous,b,UFP,inhabited
+36,Adhara,b,UFP,inhabited
+37,Ajilon,b,UFP,inhabited
+38,Akaali,b,-,inhabited
+39,Alapech'ch,b,Klingon Empire,inhabited
+40,Alawanir Nebula,b,-,Nebula
+41,Albired,a,UFP,inhabited
+42,Alcyone,a,Neutral,inhabited
+43,Aldebaran,b,UFP,inhabited
+44,Aldhibain,a,Neutral,inhabited
+45,Aldus,b,Neutral,inhabited
+46,Algeron,b,-,habitable
+47,Algira,a,Cardassian Union,inhabited
+48,Algol,a,Neutral,inhabited
+49,Algorab,b,Romulan Star Empire,inhabited
+50,Alhena,b,Klingon Empire,inhabited
+51,Alkaid,a,Neutral,inhabited
+52,Almatha,a,Cardassian Union,inhabited
+53,Alnath,a,UFP,inhabited
+54,Alpha,a,UFP,inhabited
+55,Alpha 441,a,-,uninhabitable
+56,Alpha Brechtia,a,UFP,inhabited
+57,Alpha Centauri,b,UFP,inhabited
+58,Alpha Chamaeleonis,b,-,uninhabitable
+59,Alpha Circini,b,-,uninhabitable
+60,Alpha Fornacis,b,-,uninhabitable
+61,Alpha Hromi,b,UFP,inhabited
+62,Alpha Hydri,b,-,uninhabitable
+63,Alpha Mensae,b,-,uninhabitable
+64,Alpha Monocerotis,b,-,uninhabitable
+65,Alpha Omicron,a,-,uninhabitable
+66,Alpha Onias,b,-,uninhabitable
+67,Alpha Pictoris,b,-,uninhabitable
+68,Alpha Trianguli,a,-,uninhabitable
+69,Alpha Volantis,b,-,uninhabitable
+70,Alrakis,a,Neutral,inhabited
+71,Alrescha,a,UFP,inhabited
+72,Alshain,a,Neutral,inhabited
+73,Altair,a,UFP,inhabited
+74,Alzirr,b,Son'a,inhabited
+75,Amar,b,Klingon Empire,inhabited
+76,Amargosa,b,-,Quantum Singularity
+77,Amargosa Diasprova,b,-,Star Cluster
+78,Amleth,a,Cardassian Union,inhabited
+79,Amleth Nebula,a,-,nebula
+80,Andoria,b,UFP,inhabited
+81,Angel,b,Neutral,inhabited
+82,Angosia,b,Neutral,inhabited
+83,Ankaa,b,-,inhabited
+84,Antares,b,UFP,inhabited
+85,Antede,a,Neutral,inhabited
+86,Antos,a,UFP,inhabited
+87,Arachnis Nebula,a,-,Nebula
+88,Arawath,a,Cardassian Union,inhabited
+89,Arbazan,a,UFP,inhabited
+90,Archanis,b,UFP,inhabited
+91,Arcturus,a,UFP,inhabited
+92,Ardana,b,Klingon Empire,inhabited
+93,Argaya,a,Neutral,inhabited
+94,Argelius,b,UFP,inhabited
+95,Argo,a,Neutral,inhabited
+96,Argolis Cluster,a,-,Star Cluster
+97,Argus,a,-,habitable
+98,Argus Array,a,UFP,Starfleet installation
+99,Arkaria,a,UFP,inhabited
+100,Armens,a,UFP,inhabited
+101,Ascella,a,UFP,inhabited
+102,Atbar,a,Cardassian Union,inhabited
+103,'Aucdet,b,UFP,inhabited
+104,Avenal,a,Cardassian Union,inhabited
+105,Avior,b,Neutral,inhabited
+106,Axanar,b,UFP,inhabited
+107,Azha,b,UFP,inhabited
+108,Azure,b,UFP,inhabited
+109,Azure Nebula,b,-,Nebula
+110,B'aaj,b,Klingon Empire,inhabited
+111,Babel,b,UFP,inhabited
+112,Badlands,a,-,Nebula
+113,Baham,a,Neutral,inhabited
+114,Bajor,a,UFP,inhabited
+115,Ba'ku,b,UFP Protectorate,inhabited
+116,Balancar,a,Ferengi Alliance,inhabited
+117,Balduk,b,Klingon Empire,inhabited
+118,Balosnee,a,Neutral,inhabited
+119,Bardeezi,a,-,uninhabitable
+120,Barkon,a,-,inhabited
+121,Barnard's Star,a,-,uninhabitable
+122,Barolia,b,UFP,inhabited
+123,Barradas,b,-,habitable
+124,Barson,a,UFP,inhabited
+125,Barzan,a,Neutral,inhabited
+126,Bassen Rift,b,-,Nebula
+127,Belak,b,Romulan Star Empire,inhabited
+128,Bellatrix,b,Neutral,inhabited
+129,Beloti,a,Neutral,inhabited
+130,Benecia,a,UFP,inhabited
+131,Benzar,b,UFP,inhabited
+132,Berengaria,a,UFP,inhabited
+133,Bersallis,a,-,uninhabitable
+134,Beta Agni,b,UFP,inhabited
+135,Beta Brechtia,a,Neutral,inhabited
+136,Beta Cassius,a,UFP,inhabited
+137,Beta Circini,b,-,uninhabitable
+138,Beta Comae Berenices,a,-,uninhabitable
+139,Beta Hromi,b,-,inhabited
+140,Beta Kupsic,b,UFP,inhabited
+141,Beta Lankal,b,-,uninhabitable
+142,Beta Leonis Minoris,b,-,uninhabitable
+143,Beta Magellan (Bynaus),a,UFP,inhabited
+144,Beta Pictoris,b,-,uninhabitable
+145,Beta Piscis Australis,a,-,uninhabitable
+146,Beta Renner,a,UFP,inhabited
+147,Beta Reticuli,b,-,uninhabitable
+148,Beta Rigel,b,UFP,inhabited
+149,Beta Thoridar,b,-,uninhabitable
+150,Beta Trianguli,a,-,uninhabitable
+151,Beta Volantis,b,-,uninhabitable
+152,Betazed,a,UFP,inhabited
+153,Betelgeuse,b,UFP,inhabited
+154,Betreka Nebula,a,-,Nebula
+155,B'hei,b,Klingon Empire,inhabited
+156,Bilana,a,UFP,inhabited
+157,Black Cluster,a,-,Black Cluster
+158,Blue Horizon,a,UFP,inhabited
+159,B'moth,b,Klingon Empire,inhabited
+160,Bok'nor,a,Cardassian Union,inhabited
+161,Bolarus,b,UFP,inhabited
+162,Boraal,b,-,uninhabitable
+163,Boreth,b,Klingon Empire,inhabited
+164,Borka,b,UFP,inhabited
+165,Bortas,b,Klingon Empire,inhabited
+166,Braslota,a,-,uninhabitable
+167,Brauda,b,-,uninhabitable
+168,Brechtian Cluster,a,-,Star Cluster
+169,Bre'el,b,UFP,inhabited
+170,Breen,a,Breen Confederacy,inhabited
+171,Brestant,b,Klingon Empire,inhabited
+172,Briar Patch,b,-,Nebula
+173,Bringloid,b,-,uninhabitable
+174,Bryma,a,Cardassian Union,inhabited
+175,Buruk,b,Klingon Empire,inhabited
+176,Bynaus (Beta Magellan),a,UFP,inhabited
+177,Cabral,b,UFP,inhabited
+178,Cairn,b,UFP,inhabited
+179,Cait,a,UFP,inhabited
+180,Calder,b,UFP,inhabited
+181,Caldik,a,UFP,inhabited
+182,Caldonia,b,Neutral,inhabited
+183,Caldos,b,UFP,inhabited
+184,Camor,a,UFP,inhabited
+185,Camus,a,UFP,inhabited
+186,Canopus,b,-,habitable
+187,Capella,b,UFP Protectorate,inhabited
+188,Cardassia,a,Cardassian Union,inhabited
+189,Carema,a,UFP,inhabited
+190,Carraya,a,Romulan Star Empire,inhabited
+191,Castal,a,Talarian Republic,inhabited
+192,Castor,b,UFP,inhabited
+193,Catulla,b,Neutral,inhabited
+194,Cebelrai,a,-,habitable
+195,Celes,b,UFP,inhabited
+196,Celtris,a,-,uninhabitable
+197,Cerberus,b,UFP,inhabited
+198,Cestus,b,UFP,inhabited
+199,Ceti Alpha,b,-,uninhabitable
+200,Chalna,b,Neutral,inhabited
+201,Chaltok,b,Quarantined,uninhabitable
+202,Charybdis,a,Neutral,inhabited
+203,Cheron,b,Romulan Star Empire,inhabited
+204,Cheron,b,-,habitable
+205,Chetzia,b,Romulan Star Empire,inhabited
+206,Chi Ceti A,a,-,uninhabitable
+207,Chi Draconis,a,-,uninhabitable
+208,Chi Herculis,a,-,uninhabitable
+209,Chi Leonis,b,-,uninhabitable
+210,Chin'toka,a,Cardassian Union,inhabited
+211,Chiron,a,UFP,inhabited
+212,Ch?da Besk,a,Breen Confederacy,inhabited
+213,ch'Rihan (Romulus),b,Romulan Star Empire,inhabited
+214,Clarus,a,Ferengi Alliance,inhabited
+215,Coltar,a,UFP,inhabited
+216,Constanthus,b,Romulan Star Empire,inhabited
+217,Cor Caroli,a,-,uninhabitable
+218,Cor Caroli,b,UFP,inhabited
+219,Cordannas,a,UFP,inhabited
+220,Coridan,b,UFP,inhabited
+221,Cruses,b,-,inhabited
+222,Crysalia,b,Neutral,inhabited
+223,Cuellar,a,Cardassian Union,inhabited
+224,Cursa,b,Klingon Empire,inhabited
+225,Cygnet,a,UFP,inhabited
+226,Dakala,a,-,inhabited
+227,Daled,b,Neutral,inhabited
+228,Dark Matter Nebula,a,-,Nebula
+229,D'arsay,a,-,habitable
+230,Davlos,b,Neutral,inhabited
+231,Dayos,b,-,habitable
+232,D'deridex,b,Romulan Star Empire,inhabited
+233,De Laure Belt,a,-,Nebula
+234,Deep Space 3,a,UFP,Starfleet installation
+235,Deep Space 4,b,UFP,Starfleet installation
+236,Deep Space 5,b,UFP,Starfleet installation
+237,Deep Space 6,b,UFP,Starfleet installation
+238,Deep Space 9,a,UFP,Starfleet installation
+239,Deep Space K-7,b,UFP,Starfleet installation
+240,Deinonychus,b,Klingon Empire,inhabited
+241,Delavi,a,Neutral,inhabited
+242,Delos,b,Neutral,inhabited
+243,Delphi Ardu,a,-,habitable
+244,Delstin,b,Klingon Empire,inhabited
+245,Delta,a,UFP,inhabited
+246,Delta Aquilae,a,-,uninhabitable
+247,Delta Doradus,b,-,uninhabitable
+248,Delta Hydri,b,-,uninhabitable
+249,Delta Leonis,b,-,uninhabitable
+250,Delta Phoenicis,b,-,uninhabitable
+251,Delta Rana,a,-,uninhabitable
+252,Delta Sculptoris,a,-,uninhabitable
+253,Delta Velorum,b,-,uninhabitable
+254,Deneb El Okab,a,UFP,inhabited
+255,Deneb Kaitos,a,UFP,inhabited
+256,Deneva,b,UFP,inhabited
+257,Deneva Nebula,b,-,Nebula
+258,Denobula Triaxa,a,UFP,inhabited
+259,Dessica,b,Neutral,inhabited
+260,Detrian,a,-,uninhabitable
+261,Devolin,b,-,uninhabitable
+262,Devoras,b,Romulan Star Empire,inhabited
+263,Devron,b,-,uninhabitable
+264,Dewa,b,-,uninhabitable
+265,Dikon Alpha,a,-,Pulsar
+266,Dinasia,b,-,uninhabitable
+267,Dividia,b,Neutral,inhabited
+268,Dolaria,a,Neutral,inhabited
+269,Donatu,b,Klingon Empire,inhabited
+270,Don'zali,b,Klingon Empire,inhabited
+271,Dopa,a,Cardassian Union,inhabited
+272,Dopteria,a,Neutral,inhabited
+273,Doraf,a,UFP,inhabited
+274,Dorala,b,UFP,inhabited
+275,Dorvan,a,Cardassian Union,inhabited
+276,Dosa Gehen,a,Breen Confederacy,inhabited
+277,Dozaria,a,Breen Confederacy,inhabited
+278,Draken,b,UFP,inhabited
+279,Draygo,a,-,habitable
+280,Draylax,b,UFP,inhabited
+281,Draylon,a,Neutral,inhabited
+282,Drema,b,UFP Protectorate,inhabited
+283,Dreon,a,UFP,inhabited
+284,Dubhe,a,UFP,inhabited
+285,Dulisian,b,UFP,inhabited
+286,Dyson-Sphere,b,-,habitable
+287,Earth (SOL),a,UFP,inhabited
+288,Echo 3,a,UFP,Starfleet installation
+289,Eden,b,-,habitable
+290,El-Adrel,b,-,habitable
+291,Eldasich,a,Tzenkethi Coalition,inhabited
+292,Eloh,b,Romulan Star Empire,inhabited
+293,Elora,b,Son'a,inhabited
+294,Endicor,b,UFP,inhabited
+295,Enif,a,UFP,inhabited
+296,Epsilon 119,a,-,uninhabitable
+297,Epsilon Gruis,b,-,uninhabitable
+298,Epsilon Hydrae,b,-,uninhabitable
+299,Epsilon Librae,b,-,uninhabitable
+300,Epsilon Monocerotis,b,-,uninhabitable
+301,Epsilon Nel,a,Neutral,inhabited
+302,Epsilon Pavonis,b,-,uninhabitable
+303,Epsilon Phoenicis,b,-,uninhabitable
+304,Epsilon Pulsar Cluster,b,-,Star Cluster
+305,Epsilon Sculptoris,b,-,uninhabitable
+306,Epsylon Mynos,b,Neutral,inhabited
+307,Eska,a,Neutral,inhabited
+308,Eta Antiliae,b,-,uninhabitable
+309,Eta Coronae Borealis,a,-,uninhabitable
+310,Eta Corvi,b,-,uninhabitable
+311,Eta Crusis,b,-,uninhabitable
+312,Eta Horolgii,b,-,uninhabitable
+313,Eta Indi,b,-,uninhabitable
+314,Eta Serpentis,a,-,uninhabitable
+315,Europa Nova,a,Neutral,inhabited
+316,Evadne,a,UFP,inhabited
+317,Evora,a,UFP Protectorate,inhabited
+318,Fahleena,a,Neutral,inhabited
+319,Farius,a,Neutral,inhabited
+320,Fedrick-M,a,Sheliak Corporate,inhabited
+321,Fellebia,a,UFP,inhabited
+322,Ferenginar,a,Ferengi Alliance,inhabited
+323,Fesarius,a,First Federation,inhabited
+324,FGC47 Nebula,a,-,Nebula
+325,FGC-82659,b,-,uninhabitable
+326,Ficus,b,UFP,inhabited
+327,Forcas,b,Klingon Empire,inhabited
+328,Free Haven,a,UFP,inhabited
+329,Frunal,a,Neutral,inhabited
+330,Gacrux,b,Romulan Star Empire,inhabited
+331,Gagarin,b,UFP,inhabited
+332,Galador,a,Neutral,inhabited
+333,Galdonterre,b,Klingon Empire,inhabited
+334,Galen,a,UFP,inhabited
+335,Galorndon Core,b,-,uninhabitable
+336,Gamelan,b,Neutral,inhabited
+337,Gamma 7,b,-,uninhabitable
+338,Gamma 7A,b,-,uninhabitable
+339,Gamma Arigulon,b,-,uninhabitable
+340,Gamma Centauri,b,-,uninhabitable
+341,Gamma Ceti,a,-,uninhabitable
+342,Gamma Coronae Australis,a,-,uninhabitable
+343,Gamma Coronae Borealis,a,-,uninhabitable
+344,Gamma Crateris,b,-,uninhabitable
+345,Gamma Doradus,b,-,uninhabitable
+346,Gamma Eridon,b,-,uninhabitable
+347,Gamma Hromi,b,-,habitable
+348,Gamma Hydrae,b,-,inhabited
+349,Gamma Mensae,b,-,uninhabitable
+350,Gamma Ophiuchi,a,-,uninhabitable
+351,Gamma Pavonis,b,-,uninhabitable
+352,Gamma Serpentis,a,-,uninhabitable
+353,Gamma Tauri,a,-,habitable
+354,Gamma Trianguli,a,-,inhabited
+355,Gamma Tucanae,b,-,uninhabitable
+356,Ganalda,b,Klingon Empire,inhabited
+357,Garadius,b,UFP,inhabited
+358,Garadius,a,Neutral,inhabited
+359,Gault,b,UFP,inhabited
+360,gavaria,a,Neutral,inhabited
+361,Gemma,a,UFP,inhabited
+362,Gemulon,a,-,habitable
+363,Gemworld,a,UFP,inhabited
+364,Gienah,a,Ferengi Alliance,inhabited
+365,Glasko,b,Romulan Star Empire,inhabited
+366,Glintara,b,Romulan Star Empire,inhabited
+367,Goralis,a,-,inhabited
+368,Gorath,b,Klingon Empire,inhabited
+369,Goren,a,Neutral,inhabited
+370,Gorn,b,Gorn Hegemony,inhabited
+371,Gravesworld,b,-,uninhabitable
+372,Grazer,a,UFP,inhabited
+373,Grisella,a,Neutral,inhabited
+374,Groombrigde 34,a,-,uninhabitable
+375,Gr'oth,b,Klingon Empire,inhabited
+376,G'trok,b,Klingon Empire,inhabited
+377,Guernica,a,UFP,inhabited
+378,Haakona,b,Romulan Star Empire,inhabited
+379,Hakton,a,UFP,inhabited
+380,Halee,b,Klingon Empire,inhabited
+381,Hanolan,a,UFP,inhabited
+382,Hatarian,b,-,habitable
+383,H'atoria,b,Klingon Empire,inhabited
+384,Hayashi,b,UFP,inhabited
+385,Heathercrist,a,-,habitable
+386,Hegh'ta,b,Klingon Empire,inhabited
+387,Hekaras,a,UFP,inhabited
+388,Helaspoint Nebula,a,-,Nebula
+389,Hetona Cluster,a,-,Star Cluster
+390,Heze,b,-,inhabited
+391,Hobus,b,-,uninhabitable
+392,Hor-cha,b,Klingon Empire,inhabited
+393,Hromi Cluster,b,-,Star Cluster
+394,Hugora Nebula,a,-,Nebula
+395,Hupyria,a,Neutral,inhabited
+396,Hurada,a,Neutral,inhabited
+397,Husnock,a,-,habitable
+398,Hyralan,b,UFP,inhabited
+399,Iadara,a,UFP,inhabited
+400,Iccobar,b,-,uninhabitable
+401,Iconia,b,-,uninhabitable
+402,Idini Cluster,a,-,Star Cluster
+403,Ikalia,b,Klingon Empire,inhabited
+404,Inferna,a,UFP,inhabited
+405,Inkaria,a,Neutral,inhabited
+406,Iota Carinae,b,-,uninhabitable
+407,Iota Cassiopeiae,a,-,uninhabitable
+408,Iota Centauri,b,-,uninhabitable
+409,Iota Cephei,a,-,uninhabitable
+410,Iota Crucis,b,-,uninhabitable
+411,Iota Eridani,b,-,uninhabitable
+412,Iota Horologii,b,-,uninhabitable
+413,Iota Hydri,b,-,uninhabitable
+414,Iota Pavonis,b,-,inhabited
+415,Iota Persei,a,-,uninhabitable
+416,Ipai,b,UFP,inhabited
+417,Irtok,a,Ferengi Alliance,inhabited
+418,Ivor,b,UFP,inhabited
+419,Izar,a,UFP,inhabited
+420,Izsak Protostar Cloud,b,-,Nebula
+421,Japori,b,UFP,inhabited
+422,Jaradan,b,UFP,inhabited
+423,J'naii,b,Neutral,inhabited
+424,Jorett,b,-,inhabited
+425,Jouret,b,UFP,inhabited
+426,J'Ral,b,-,Neutron Star
+427,Juhraya,a,Cardassian Union,inhabited
+428,Kaelon,a,Neutral,inhabited
+429,Kaferia,a,UFP,inhabited
+430,Kalandra,a,Cardassian Union,inhabited
+431,Kaldra,a,Neutral,inhabited
+432,Kaleb,b,UFP,inhabited
+433,Kalla,b,Neutral,inhabited
+434,Kantare,b,UFP,inhabited
+435,Kappa Geminorum,b,-,uninhabitable
+436,Kappa Ophiuchi,a,-,uninhabitable
+437,Kappa Persei,a,-,uninhabitable
+438,Kappa Tuccanae,b,-,uninhabitable
+439,Karagh,b,Klingon Empire,inhabited
+440,Kaus Borealis,a,-,inhabited
+441,Kavaria,a,Neutral,inhabited
+442,Kavis Alpha,a,Neutral,inhabited
+443,Kazar,a,UFP,inhabited
+444,Kelrabi,a,Cardassian Union,inhabited
+445,Kelvas,a,Cardassian Union,inhabited
+446,Kenda,a,UFP,inhabited
+447,Kenthu Dar,a,Breen Confederacy,inhabited
+448,Kesprytt,a,Neutral,inhabited
+449,Kessik,b,UFP,inhabited
+450,Kevratas,b,Romulan Star Empire,inhabited
+451,Khazara,b,Romulan Star Empire,inhabited
+452,Khefka,a,Neutral,inhabited
+453,Khitomer,b,Klingon Empire,inhabited
+454,Kholfa,a,-,uninhabitable
+455,Klaestron,a,Neutral,inhabited
+456,Klavdia,b,Neutral,inhabited
+457,Klion,b,Neutral,inhabited
+458,Klothos,b,Klingon Empire,inhabited
+459,K'normia,a,UFP,inhabited
+460,Kobheeria,a,UFP,inhabited
+461,Kobliad,a,Neutral,inhabited
+462,Kohlan,a,Ferengi Alliance,inhabited
+463,Koinonia,a,-,inhabited
+464,Kora,a,Cardassian Union,inhabited
+465,Koralis,a,-,uninhabitable
+466,Korinar,b,Klingon Empire,inhabited
+467,Korma,a,Cardassian Union,inhabited
+468,Kornephoros,a,Neutral,inhabited
+469,Korvat,b,UFP,inhabited
+470,Kostolain,b,Neutral,inhabited
+471,Kotaki,a,-,uninhabitable
+472,Kotara Barath,a,Cardassian Union,inhabited
+473,Kressari,a,Neutral,inhabited
+474,Krios,b,Klingon Empire,inhabited
+475,K't'inga,b,Klingon Empire,inhabited
+476,K'vort,b,Klingon Empire,inhabited
+477,Kzin,a,Kzin Patriarchy,inhabited
+478,Lagara,a,Neutral,inhabited
+479,Lalande 25372,b,-,uninhabitable
+480,Lambda Coronae Borealis,a,-,uninhabitable
+481,Lambda Geminorum,b,-,uninhabitable
+482,Lambda Hydrae,b,-,uninhabitable
+483,Lamda Bootis,a,-,uninhabitable
+484,Lamda Crateris,b,-,uninhabitable
+485,Lamemda,a,Tzenkethi Coalition,inhabited
+486,Lappa,a,Ferengi Alliance,inhabited
+487,Largo,a,Tzenkethi Coalition,inhabited
+488,Lazon,a,Cardassian Union,inhabited
+489,Lembatta Cluster,b,-,Star Cluster
+490,Lemma,a,UFP,inhabited
+491,Ligobis,a,Neutral,inhabited
+492,Ligon,a,Neutral,inhabited
+493,Loracus,b,-,habitable
+494,Lorillia,b,UFP,inhabited
+495,Lorka Cluster,b,-,Star Cluster
+496,Loval,a,Cardassian Union,inhabited
+497,Ludugia,a,UFP,inhabited
+498,Lyar,b,Neutral,inhabited
+499,Lyshan,a,UFP,inhabited
+500,Lysia,a,Neutral,inhabited
+501,Lytasia,a,Neutral,inhabited
+502,Mab-bu,b,Quarantined,inhabited
+503,Mac Pherson Nebula,a,-,Nebula
+504,Maht-h'a,b,Klingon Empire,inhabited
+505,Makar,b,Romulan Star Empire,inhabited
+506,Makoria Quasar,b,-,Quantum Singularity
+507,Maluria,b,UFP,inhabited
+508,Manzar,b,UFP,inhabited
+509,Mar Oscura Nebula,b,-,Nebula
+510,Maranga,b,Klingon Empire,inhabited
+511,Mariah,a,Neutral,inhabited
+512,Marijne,b,-,uninhabitable
+513,Mariposa,b,Neutral,inhabited
+514,Marlonia,b,UFP,inhabited
+515,Mathen,a,-,inhabited
+516,Maxia,a,Ferengi Alliance,inhabited
+517,McAllister C-5 Nebula,a,-,nebula
+518,M'char,b,Klingon Empire,inhabited
+519,Megara,a,UFP,inhabited
+520,Mekorda,a,UFP,inhabited
+521,Meles,a,Neutral,inhabited
+522,Melina,a,Neutral,inhabited
+523,Melona,a,-,uninhabitable
+524,Memory Alpha,a,UFP,Federation installation
+525,Mempa,b,Klingon Empire,inhabited
+526,Menkalinan,a,-,inhabited
+527,Menkent,b,Romulan Star Empire,inhabited
+528,Merak,a,UFP,inhabited
+529,Mericor,a,Neutral,inhabited
+530,Midas Array,b,UFP,Starfleet installation
+531,Mikulak,b,UFP,inhabited
+532,Minos,b,Quarantined,habitable
+533,Minos Korva,a,UFP,inhabited
+534,Mintaka,a,-,inhabited
+535,Mira,a,UFP,inhabited
+536,Mira Antiliae,a,-,uninhabitable
+537,Miridian,b,-,habitable
+538,Mizar,a,UFP,inhabited
+539,Mizar,a,Neutral,inhabited
+540,M'kemas,a,Tzenkethi Coalition,inhabited
+541,Moab,a,Neutral,inhabited
+542,Monac,a,Cardassian Union,inhabited
+543,Mordon,a,Neutral,inhabited
+544,Moropa,b,Neutral,inhabited
+545,Morska,b,Klingon Empire,inhabited
+546,Moselina,b,UFP,inhabited
+547,MS-1,b,UFP,inhabited
+548,MS-2,a,UFP,inhabited
+549,MS-3,a,UFP,inhabited
+550,MS-4,a,UFP,inhabited
+551,MS-8,a,UFP,inhabited
+552,Mu Andromedae,a,-,uninhabitable
+553,Mu Arae,b,-,uninhabitable
+554,Mu Cassiopeiae,a,-,uninhabitable
+555,Mu Herculis,a,-,uninhabitable
+556,Mu Horologii,b,-,uninhabitable
+557,Mu Velorum,b,-,uninhabitable
+558,Mu Virginis,b,-,uninhabitable
+559,Mudor,b,UFP,inhabited
+560,Muliphen,b,Neutral,inhabited
+561,Murasaki Quasar,b,-,Quantum Singularity
+562,Muraski Quasar,b,-,Quantum Singularity
+563,Mutara Nebula,b,-,Nebula
+564,MX-362,b,UFP,inhabited
+565,MX-774,a,UFP,inhabited
+566,Nahmi,b,Neutral,inhabited
+567,Narendra,b,-,habitable
+568,Nashira,a,UFP,inhabited
+569,Nausicaa,b,Neutral,inhabited
+570,Neethia,a,Neutral,inhabited
+571,Negh'var,b,Klingon Empire,inhabited
+572,Nehru,a,UFP,inhabited
+573,Nelvana,b,-,uninhabitable
+574,Nequencia,b,Romulan Star Empire,inhabited
+575,Nervala,b,-,uninhabitable
+576,Neural,a,-,inhabited
+577,New Berlin,b,UFP,inhabited
+578,New France,a,UFP,inhabited
+579,Ngame Nebula,a,-,Nebula
+580,NGC 2812,b,-,uninhabitable
+581,Niburon,a,Neutral,inhabited
+582,Nigala,a,UFP,inhabited
+583,Nimbus,b,-,habitable
+584,Nivoch,a,Neutral,inhabited
+585,No'mat,b,Klingon Empire,inhabited
+586,Norpin,b,UFP,inhabited
+587,Nu Octantis,b,-,uninhabitable
+588,Nusakan,a,-,inhabited
+589,N'yengoren,b,Klingon Empire,inhabited
+590,Ogat,b,Klingon Empire,inhabited
+591,Ogus,a,UFP,inhabited
+592,Ohniaka,b,UFP,inhabited
+593,Omega Leonis,b,-,uninhabitable
+594,Omega Piscium,a,-,uninhabitable
+595,Omega Sagitta,b,-,inhabited
+596,Omega Sagittarii,a,-,uninhabitable
+597,Omekla,a,Cardassian Union,inhabited
+598,Omicron Cephei,a,Tholian Assembly,inhabited
+599,Omicron Theta,a,-,uninhabitable
+600,Oneamisu,a,UFP,inhabited
+601,Ophiucus,b,UFP,inhabited
+602,Orelious,a,-,uninhabitable
+603,Orellius,a,Neutral,inhabited
+604,Organia,b,Neutral,inhabited
+605,Orias,a,-,habitable
+606,Orion,b,Neutral,inhabited
+607,Orkan,b,Neutral,inhabited
+608,Outpost 47,a,Cardassian Union,Cardassian installation
+609,Outpost 61,a,Cardassian Union,Cardassian installation
+610,Outpost MZ-5,b,UFP,Starfleet installation
+611,P Eridani,b,-,uninhabitable
+612,Pacifica,a,UFP,inhabited
+613,Pagh,b,Klingon Empire,inhabited
+614,Panora,a,Cardassian Union,inhabited
+615,Parliament,a,Neutral,inhabited
+616,Parvenium,a,-,habitable
+617,Paulson Nebula,b,-,Nebula
+618,Pegos Minor,a,-,uninhabitable
+619,Pej Roak,a,Breen Confederacy,inhabited
+620,Peliar Zel,a,UFP,inhabited
+621,Pentarus,b,Neutral,inhabited
+622,Penthara,a,UFP,inhabited
+623,Penthara,a,UFP,inhabited
+624,Persephone,a,UFP,inhabited
+625,Pheben,b,Klingon Empire,inhabited
+626,Pheonix Cluster,b,-,Star Cluster
+627,Phi Virginis,b,-,uninhabitable
+628,Pi 1 Ursae Majoris,a,-,uninhabitable
+629,Pi Mansae,b,-,uninhabitable
+630,Pi Piscis Australis,a,-,uninhabitable
+631,P'Jem,b,-,Neutron Star
+632,Planet Q,a,UFP,inhabited
+633,Pleiades Cluster,a,-,Star Cluster
+634,Pollux,b,Neutral,inhabited
+635,Porrima,b,-,inhabited
+636,Portas,a,Breen Confederacy,inhabited
+637,P'rang,b,Klingon Empire,inhabited
+638,Pree',a,UFP,inhabited
+639,Preenos,b,Neutral,inhabited
+640,Prexnak,a,-,uninhabitable
+641,Prophet's Landing,a,UFP,inhabited
+642,PS-214,a,-,uninhabitable
+643,Psi Cancri,b,-,uninhabitable
+644,Psi Octantis,b,-,uninhabitable
+645,Psi Velorum,b,-,uninhabitable
+646,Pullock,a,Cardassian Union,inhabited
+647,Pyrellia,a,UFP,inhabited
+648,Pyris,b,-,habitable
+649,Pyrithia,a,Neutral,inhabited
+650,QSR 390021,b,-,uninhabitable
+651,Q'tahl,b,Klingon Empire,inhabited
+652,Quadra Sigma,a,UFP,inhabited
+653,Qualor,b,UFP,inhabited
+654,Quatal,a,-,habitable
+655,Quinor,a,-,habitable
+656,Qu'nos,b,Klingon Empire,inhabited
+657,Qu'vat,b,Klingon Empire,inhabited
+658,Radelis,b,UFP,inhabited
+659,Rakal,a,Cardassian Union,inhabited
+660,Rakon,a,-,inhabited
+661,Ramatis,b,UFP,inhabited
+662,Rao Puppis,b,-,uninhabitable
+663,Rasalhalgue,a,Neutral,inhabited
+664,Rator,b,Romulan Star Empire,inhabited
+665,Regulak,a,-,habitable
+666,Regulon,a,Neutral,inhabited
+667,Regulus,b,UFP,inhabited
+668,Rekag-Seronia,b,Neutral,inhabited
+669,Relay Station 194,b,UFP,Starfleet installation
+670,Relay Station 47,b,UFP,Starfleet installation
+671,Relva,b,UFP,inhabited
+672,Rematis,b,Neutral,inhabited
+673,Renavi,b,Neutral,inhabited
+674,Resarch Station 75,b,UFP,Federation installation
+675,Rhaandar,b,UFP,inhabited
+676,Rho Capricorni,a,-,uninhabitable
+677,Rho Tucanae,b,-,uninhabitable
+678,Rho Virginis,b,-,uninhabitable
+679,Rigel,b,UFP,inhabited
+680,Risa,b,UFP,inhabited
+681,Rog,a,-,habitable
+682,Rolor Nebula,a,-,Nebula
+683,Romii,b,Romulan Star Empire,inhabited
+684,Romulus (ch'Rihan),b,Romulan Star Empire,inhabited
+685,Ronara,a,UFP,inhabited
+686,Rondac,a,Cardassian Union,inhabited
+687,Rotanev,a,Neutral,inhabited
+688,Rotarran,b,Klingon Empire,inhabited
+689,Rubicun,a,Neutral,inhabited
+690,Rudellia,a,-,inhabited
+691,Rura Penthe,b,Klingon Empire,Klingon installation
+692,Rutia,b,Neutral,inhabited
+693,Rymus,a,-,inhabited
+694,Sabik,a,Neutral,inhabited
+695,Saltok,a,UFP,inhabited
+696,Salva,a,Cardassian Union,inhabited
+697,Sappora,a,Neutral,inhabited
+698,Sarin,a,-,inhabited
+699,Sarona,a,UFP,inhabited
+700,Sarpedion,a,Cardassian Union,inhabited
+701,Sauria,a,UFP,inhabited
+702,Science Station D-5,b,UFP,Federation installation
+703,Seginus,a,Neutral,inhabited
+704,Sepia,a,Ferengi Alliance,inhabited
+705,Septimus,a,Cardassian Union,inhabited
+706,Septimus Minor,a,-,habitable
+707,Setlik,a,UFP,inhabited
+708,Shamin,a,Neutral,inhabited
+709,Shelia,a,Sheliak Corporate,inhabited
+710,Sheliak,a,Neutral,inhabited
+711,Sherman's Planet,b,-,habitable
+712,Sheva,a,-,habitable
+713,Sigma Bootis,a,-,uninhabitable
+714,Sigma Ceti,b,-,uninhabitable
+715,Sigma Coronae Borealis,a,-,uninhabitable
+716,Sigma Draconis,a,UFP,inhabited
+717,Sigma Geminorum,b,-,uninhabitable
+718,Sigma Serpentis,a,-,uninhabitable
+719,Simperia,a,-,habitable
+720,Sirius,b,UFP,inhabited
+721,SN1987A,a,-,uninhabitable
+722,SNR 093120,b,-,uninhabitable
+723,SOL (Earth),a,UFP,inhabited
+724,Solais,b,Neutral,inhabited
+725,Solarion,a,UFP,inhabited
+726,Solosos,a,Cardassian Union,inhabited
+727,Somraw,b,Klingon Empire,inhabited
+728,Son'a,b,Son'a,inhabited
+729,Sothis,a,Neutral,inhabited
+730,Soukara,a,Cardassian Union,inhabited
+731,Spica,b,Neutral,inhabited
+732,Stameris,a,UFP,inhabited
+733,Starbase 105,b,UFP,Starfleet installation
+734,Starbase 11,a,UFP,Starfleet installation
+735,Starbase 117,b,UFP,Starfleet installation
+736,Starbase 12,b,-,Starfleet installation
+737,Starbase 121,b,UFP,Starfleet installation
+738,Starbase 123,b,UFP,Starfleet installation
+739,Starbase 129,a,UFP,Starfleet installation
+740,Starbase 133,a,UFP,Starfleet installation
+741,Starbase 14,a,UFP,inhabited
+742,Starbase 152,b,UFP,Starfleet installation
+743,Starbase 157,b,UFP,Starfleet installation
+744,Starbase 159,b,UFP,Starfleet installation
+745,Starbase 173,b,UFP,Starfleet installation
+746,Starbase 179,b,UFP,Starfleet installation
+747,Starbase 185,b,UFP,Starfleet installation
+748,Starbase 2,a,UFP,inhabited
+749,Starbase 211,a,UFP,Starfleet installation
+750,Starbase 212,b,UFP,Starfleet installation
+751,Starbase 214,a,UFP,Starfleet installation
+752,Starbase 219,b,UFP,Starfleet installation
+753,Starbase 23,b,UFP,Starfleet installation
+754,Starbase 234,b,UFP,Starfleet installation
+755,Starbase 234,b,UFP,Starfleet installation
+756,Starbase 24,b,UFP,Starfleet installation
+757,Starbase 247,b,UFP,Starfleet installation
+758,Starbase 310,a,UFP,Starfleet installation
+759,Starbase 313,a,UFP,Starfleet installation
+760,Starbase 328,a,UFP,Starfleet installation
+761,Starbase 343,b,UFP,Starfleet installation
+762,Starbase 36,b,UFP,Starfleet installation
+763,Starbase 375,a,UFP,Starfleet installation
+764,Starbase 39-Sierra,b,UFP,Starfleet installation
+765,Starbase 416,a,UFP,Starfleet installation
+766,Starbase 440,a,UFP,Starfleet installation
+767,Starbase 47,a,UFP,inhabited
+768,Starbase 514,a,UFP,Starfleet installation
+769,Starbase 515,b,UFP,Starfleet installation
+770,Starbase 6,b,UFP,Starfleet installation
+771,Starbase 621,a,UFP,Starfleet installation
+772,Starbase 67,b,UFP,Starfleet installation
+773,Starbase 718,b,UFP,Starfleet installation
+774,Starbase 718,b,UFP,Starfleet installation
+775,Starbase 82,b,UFP,Starfleet installation
+776,Starbase 84,b,UFP,Starfleet installation
+777,Starbase G-6,a,UFP,Starfleet installation
+778,Starbase Montgomery,b,UFP,Starfleet installation
+779,Starstation India,b,UFP,Federation installation
+780,Strnad,a,-,habitable
+781,Styris,a,UFP,inhabited
+782,Suliban,b,-,uninhabitable
+783,Surata,a,-,habitable
+784,Syrma,b,UFP,inhabited
+785,T'acog,b,Klingon Empire,inhabited
+786,Tagra,a,Neutral,inhabited
+787,Talar,a,Talarian Republic,inhabited
+788,Talos,a,Quarantined,inhabited
+789,Talvath,b,Romulan Star Empire,inhabited
+790,Tama Borealis,a,-,habitable
+791,Tambor Beta-6,a,-,uninhabitable
+792,Tammeron,a,Neutral,inhabited
+793,Tandar,a,Neutral,inhabited
+794,Tanuga,b,Neutral,inhabited
+795,Tarahong,a,-,uninhabitable
+796,Tarchannen,a,-,inhabited
+797,Tarlac,b,Son'a,inhabited
+798,Tarod,b,-,habitable
+799,Tarsas,a,UFP,inhabited
+800,Tau 1 Eridani,b,-,uninhabitable
+801,Tau Bootis,a,UFP,inhabited
+802,Tau Centauri,b,-,habitable
+803,Tau Cygna,a,Sheliak Corporate,inhabited
+804,Tau Piscis Australis,a,-,uninhabitable
+805,Tau Ursae Majoris,a,-,uninhabitable
+806,Taugus,b,UFP,inhabited
+807,Taurean,b,Quarantined,inhabited
+808,Taurus Dark Cloud,a,-,Nebula
+809,T'dakk,b,Klingon Empire,inhabited
+810,Tellar,a,UFP,inhabited
+811,Tellun,b,UFP,inhabited
+812,Temecklia,a,Neutral,inhabited
+813,Tendaras Cluster,a,-,Star Cluster
+814,Teneebia,b,UFP,inhabited
+815,Terix,b,Romulan Star Empire,inhabited
+816,Ter'jas Mor,b,Klingon Empire,inhabited
+817,Terlina,a,-,habitable
+818,Terra Nova,a,-,inhabited
+819,Tesnia,a,UFP,inhabited
+820,Tessen,b,UFP,inhabited
+821,Tevak,a,Cardassian Union,inhabited
+822,T'gha,b,Klingon Empire,inhabited
+823,Thalos,a,Ferengi Alliance,inhabited
+824,Theta 116,b,-,uninhabitable
+825,Theta Cygni,a,-,uninhabitable
+826,Theta Draconis,a,-,uninhabitable
+827,Theta Indi,b,-,uninhabitable
+828,Theta Sculptoris,b,-,uninhabitable
+829,Theta Ursae Majoris,a,-,uninhabitable
+830,Tholia,a,Tholian Assembly,inhabited
+831,Tiburon,a,UFP,inhabited
+832,Tika,b,Klingon Empire,inhabited
+833,Tilonus,b,Neutral,inhabited
+834,Timor,a,Ferengi Alliance,inhabited
+835,T'Met,b,Romulan Star Empire,inhabited
+836,Toh'kaht,b,Klingon Empire,inhabited
+837,Tohvun,a,Neutral,inhabited
+838,Tomed,b,-,uninhabitable
+839,T'ong,b,Klingon Empire,inhabited
+840,Tong Beak Nebula,a,-,Nebula
+841,Topin,a,UFP,inhabited
+842,Torman,a,Neutral,inhabited
+843,Torna,b,Klingon Empire,inhabited
+844,Toron,b,Klingon Empire,inhabited
+845,Torona,b,Neutral,inhabited
+846,Toroth,b,Neutral,inhabited
+847,Torros,a,Cardassian Union,inhabited
+848,Tracken,a,-,habitable
+849,Tranome Sar,b,Romulan Star Empire,inhabited
+850,Trelka,a,-,habitable
+851,Tribble Prime,b,-,habitable
+852,Trill,a,UFP,inhabited
+853,Trivas,a,-,uninhabitable
+854,Turkana,a,Neutral,inhabited
+855,Tyberius,a,UFP,inhabited
+856,Ty'gokor,b,Klingon Empire,inhabited
+857,Typerias,a,Neutral,inhabited
+858,Typhon Expanse,b,-,Anomaly
+859,Tyrellia,b,UFP,inhabited
+860,Tyrus,b,UFP,inhabited
+861,Tzenketh,a,Tzenkethi Coalition,inhabited
+862,Ufandi,b,-,uninhabitable
+863,UFC 8177,b,-,uninhabitable
+864,UFC 9364,b,-,uninhabitable
+865,Ullian,a,Neutral,inhabited
+866,Ultima Thule,a,Neutral,inhabited
+867,Umoth,a,UFP,inhabited
+868,Unefra,a,-,habitable
+869,Unnamed Nebula,b,-,Nebula
+870,Unroth,b,Romulan Star Empire,inhabited
+871,Unukalhai,a,-,inhabited
+872,Upsilon Aquarii,a,-,uninhabitable
+873,Upsilon Ursae Majoris,a,-,uninhabitable
+874,Vacca,b,-,inhabited
+875,Vadrey Nebula,b,-,Nebula
+876,Vagra,a,Quarantined,habitable
+877,Valakis,b,UFP,inhabited
+878,Valeria,a,Neutral,inhabited
+879,Valo,a,Neutral,inhabited
+880,Valt,b,Neutral,inhabited
+881,Van Maanen's Star,a,-,uninhabitable
+882,Vanados,b,UFP,inhabited
+883,Vanden,a,Cardassian Union,inhabited
+884,Vandor,a,-,uninhabitable
+885,Vega,a,UFP,inhabited
+886,Velara,a,Quarantined,inhabited
+887,Velos,a,Cardassian Union,inhabited
+888,Vendor,b,Quarantined,inhabited
+889,Ventax,a,Neutral,inhabited
+890,Veridian,b,-,inhabited
+891,Vetar,a,Cardassian Union,inhabited
+892,Veytan,b,-,uninhabitable
+893,Volchok,a,Ferengi Alliance,inhabited
+894,Volnar,a,UFP,inhabited
+895,Volon,a,UFP,inhabited
+896,Vor'cha,b,Klingon Empire,inhabited
+897,Vorn,b,Klingon Empire,inhabited
+898,Vor'nak,b,Klingon Empire,inhabited
+899,Vulcan,b,UFP,inhabited
+900,Weytahn,b,UFP,inhabited
+901,Wie,b,-,habitable
+902,Wolf 359,b,-,uninhabitable
+903,Xarantine,b,UFP,inhabited
+904,Xendi Sabu,a,-,uninhabitable
+905,Xepolite,a,Neutral,inhabited
+906,Xi Hydrae,b,-,uninhabitable
+907,XI Ophiuchi,a,-,uninhabitable
+908,Xilk Tre,a,Breen Confederacy,inhabited
+909,Xol,b,Klingon Empire,inhabited
+910,Xyrillia,a,UFP,inhabited
+911,Yadalla,b,UFP,inhabited
+912,Ya'nang,b,Klingon Empire,inhabited
+913,Yed Posterior,a,Neutral,inhabited
+914,Yridia,b,Neutral,inhabited
+915,Y'tem,b,Klingon Empire,inhabited
+916,Zakdorn,b,UFP,inhabited
+917,Zalda,b,UFP,inhabited
+918,Zalkon,b,Neutral,inhabited
+919,Zaran,a,UFP,inhabited
+920,Zavijava,b,UFP,inhabited
+921,Zed Lapis,a,UFP,inhabited
+922,Zeta Fornacis,b,-,uninhabitable
+923,Zeta Gelis Cluster,b,-,Star Cluster
+924,Zeta Microscopii,a,-,uninhabitable
+925,Zeta Pictoris,b,-,uninhabitable
+926,Zeta Serpentis,a,-,uninhabitable
+927,Zeta Trianguli Australis,b,-,uninhabitable
+928,Zeta Volantis,b,-,uninhabitable
+929,Zetar,a,-,uninhabitable
+930,Zibal,b,Neutral,inhabited

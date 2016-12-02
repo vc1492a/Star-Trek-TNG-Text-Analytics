@@ -14,7 +14,14 @@ from nltk.stem.porter import PorterStemmer
 from nltk.stem import WordNetLemmatizer
 from nltk.sentiment import SentimentIntensityAnalyzer
 
-from pycorenlp import StanfordCoreNLP
+
+"""
+@todo:
+- Download https://en.wikipedia.org/wiki/List_of_Star_Trek_characters
+- Export the plantery table to csv file.
+- Join Character table with the big table (script table)
+- Check how to join planet with dialogue tables.
+"""
 
 # NOTE: We decided to have more of a scripting approach to this project, it being more exploratory in nature.
 
@@ -32,26 +39,26 @@ from pycorenlp import StanfordCoreNLP
 # www.st-minutiae.com/resources/scripts/
 
 ## download any other relevant data, such as the planet table
-# print('Fetching planetary table...')
-# # use requests library to get the main page content
-# r = requests.get('http://www.startrekmap.com/library/maplist.html').text
-# # use BS4 to locate the div with class
-# r_soup = BeautifulSoup(r, 'html.parser')
-# planet_table = str((r_soup.find_all('table'))[0])
-# planet_table_df_list = pd.read_html(planet_table)
-# planet_table_df = pd.DataFrame(planet_table_df_list[5])
-# planet_table_df = planet_table_df.rename(index=str, columns={0: "Designation",
-#                                                              1: "Quadrant",
-#                                                              2: "Affiliation",
-#                                                              3: "Status"})
-# print('Retrieved planetary table:')
-# print(planet_table_df.head(10))
-# print('|||||||||||||||||||||||||||||||||||||||||||')
+print('Fetching planetary table...')
+# use requests library to get the main page content
+r = requests.get('http://www.startrekmap.com/library/maplist.html').text
+# use BS4 to locate the div with class
+r_soup = BeautifulSoup(r, 'html.parser')
+planet_table = str((r_soup.find_all('table'))[0])
+planet_table_df_list = pd.read_html(planet_table)
+planet_table_df = pd.DataFrame(planet_table_df_list[5])
+planet_table_df = planet_table_df.rename(index=str, columns={0: "Designation",
+                                                             1: "Quadrant",
+                                                             2: "Affiliation",
+                                                             3: "Status"})
+# convert beta character to "b"
+planet_table_df['Quadrant'] = planet_table_df['Quadrant'].str.replace('ß', 'b')
+# write to csv
+planet_table_df.to_csv('../data/planets_df.csv', sep=',')
+print('Retrieved planetary table:')
+print(planet_table_df.head(10))
 
 # --------
-
-# connect to the Stanford Core NLP server running locally
-# nlp = StanfordCoreNLP('http://localhost:9000')
 
 # load any nltk tools we will use
 porter_stemmer = PorterStemmer()
