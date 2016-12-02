@@ -1,0 +1,175 @@
+## imports
+from bs4 import BeautifulSoup
+import requests
+import pandas as pd
+import lxml
+import html5lib
+import json
+import string
+import re
+from tqdm import tqdm
+from nltk.corpus import stopwords
+from nltk.stem.porter import PorterStemmer
+from nltk.stem import WordNetLemmatizer
+from nltk.sentiment import SentimentIntensityAnalyzer
+
+from pycorenlp import StanfordCoreNLP
+
+# NOTE: We decided to have more of a scripting approach to this project, it being more exploratory in nature.
+
+## POSSIBLE QUESTIONS TO ANSWER ABOUT THE STAR TREK TNG UNIVERSE #
+# 1: % of screen time over each episode by [character, empire (UFD, Romulan, Borg), species, gender, planet]
+# 2: Count of weapons fire over each episode by type (photon torpedo, phaser, etc.)
+# 3: Count of off-ship excursions over time (beam outs/beam ins, shuttle craft activity)
+# 4: Topic modeling. What is generally discussed in TNG? Do these topics change over time? What is topic sentiment?
+# 5: Sentiment analysis. How positive/neutral/negative is the show over each episode?
+# 6: Count of how many times Picard says "Make it so" or "engage"
+# 7: How fast does the ship travel over time? What is the specified warp speed over each episode?
+# 8: Which planets does the ship travel to? Can we put this on a galactic map?
+
+## scripts from "Star Trek: The Next Generation" were downloaded from the following link:
+# www.st-minutiae.com/resources/scripts/
+
+## download any other relevant data, such as the planet table
+# print('Fetching planetary table...')
+# # use requests library to get the main page content
+# r = requests.get('http://www.startrekmap.com/library/maplist.html').text
+# # use BS4 to locate the div with class
+# r_soup = BeautifulSoup(r, 'html.parser')
+# planet_table = str((r_soup.find_all('table'))[0])
+# planet_table_df_list = pd.read_html(planet_table)
+# planet_table_df = pd.DataFrame(planet_table_df_list[5])
+# planet_table_df = planet_table_df.rename(index=str, columns={0: "Designation",
+#                                                              1: "Quadrant",
+#                                                              2: "Affiliation",
+#                                                              3: "Status"})
+# print('Retrieved planetary table:')
+# print(planet_table_df.head(10))
+# print('|||||||||||||||||||||||||||||||||||||||||||')
+
+# --------
+
+print('Making sense of the scripts...')
+# connect to the Stanford Core NLP server running locally
+# nlp = StanfordCoreNLP('http://localhost:9000')
+
+# load any nltk tools we will use
+porter_stemmer = PorterStemmer()
+wordnet_lemmatizer = WordNetLemmatizer()
+sid = SentimentIntensityAnalyzer()
+
+# create the dataframe we will add our text data to
+tng_df = pd.DataFrame(columns=[
+    'sentence',
+    'focus',
+    'episode',
+    'filename',
+    'tokens',
+    'stemmed_tokens',
+    'norm_tokens',
+    'token_count',
+    'sentiment'
+    ]
+)
+
+
+# ADD: iterate through all files in directory, add to master df
+
+
+with open('../data/scripts/102.txt', mode='r', encoding='utf-8', errors='ignore') as f:
+    # read the content and replace new lines and tabs
+    content = f.read().replace('\n', '').replace('\t', ' ').replace('-', '').replace('--', '')
+    # here we define a focus (i.e. a person, scene, or other current focus point
+    focus = "TNG"
+    # define a base index
+    b_index = 0
+    # for each entry in the content
+    for entry in tqdm(re.split('(?<=[.!?]) +', content)):
+
+        # split by space and remove any blank entries, as well as single and double dashes
+        split_entry = list(filter(None, entry.split(' ')))
+
+        # if the first character is uppercase, it signifies a character or scene change
+        change = split_entry[0].isupper() and split_entry[0].isalpha()
+
+        # if there is a scene of character change
+        if change is True:
+            # extract the change token and remove stray "I" characters
+            change_token = ' '.join(token for token in split_entry if token.isupper() and token is not "I")
+            # set the current focus to this token
+            focus = change_token
+
+        # compile the original sentence from the list of tokens
+        sentence = [' '.join(token for token in split_entry if not token.isupper())]
+
+        # remove two and three digit that are indicators of scene changes
+        # we lose the full date, but retain publish month and year, and stardates
+        sentence = re.sub('([^\d]|^)\d{2,3}([^\d]|$)', ' ', sentence[0])
+
+        # remove any and all punctuation and obtain a list of tokens and retain tokens that are not stopwords
+        translator = sentence.maketrans({key: None for key in string.punctuation})
+        tokens = [token for token in sentence.translate(translator).split() if token not in stopwords.words('english')]
+
+        # use nltk to stem words using the Porter Stemmer
+        stemmed_tokens = []
+        [stemmed_tokens.append(porter_stemmer.stem(token)) for token in tokens]
+
+        # NOTE: lemmatize takes a part of speech parameter, "pos." If not supplied, the default is "noun."
+        # NOTE: it may be beneficial to do POS tagging with nltk prior to lemmatization to avoid this
+        # SEE: http://textminingonline.com/dive-into-nltk-part-iii-part-of-speech-tagging-and-pos-tagger
+
+        # use nltk to normalize the stemmed tokens
+        norm_tokens = []
+        [norm_tokens.append(wordnet_lemmatizer.lemmatize(token)) for token in stemmed_tokens]
+        '''WordNet® is a large lexical database of English. Nouns, verbs, adjectives and adverbs are grouped into sets
+        of cognitive synonyms (synsets), each expressing a distinct concept. Synsets are interlinked by means of
+        conceptual-semantic and lexical relations. The resulting network of meaningfully related words and concepts
+        can be navigated with the browser. WordNet is also freely and publicly available for download. WordNet’s
+        structure makes it a useful tool for computational linguistics and natural language processing.
+        -----
+        WordNet superficially resembles a thesaurus, in that it groups words together based on their meanings.
+        However, there are some important distinctions. First, WordNet interlinks not just word forms—strings of
+        letters—but specific senses of words. As a result, words that are found in close proximity to one another in
+        the network are semantically disambiguated. Second, WordNet labels the semantic relations among words, whereas
+        the groupings of words in a thesaurus does not follow any explicit pattern other than meaning similarity'''
+
+        # get the token count
+        token_count = len(tokens)
+
+        # score the sentiment of each sentence using the VADER sentiment analysis tool in nltk on the normalized tokens
+        ss = sid.polarity_scores(' '.join(token for token in norm_tokens))
+        '''VADER Sentiment Analysis. VADER (Valence Aware Dictionary and sEntiment Reasoner) is a lexicon and
+        rule-based sentiment analysis tool that is specifically attuned to sentiments expressed in social media, and
+        generally works well on text from other domains.
+        ------
+        Hutto, C.J. & Gilbert, E.E. (2014). VADER: A Parsimonious Rule-based Model for Sentiment Analysis of Social
+        Media Text. Eighth International Conference on Weblogs and Social Media (ICWSM-14). Ann Arbor, MI, June 2014.
+        ------
+        Link to Paper: http://comp.social.gatech.edu/papers/icwsm14.vader.hutto.pdf
+        '''
+
+        # add the following terms as a row to the dataframe
+        # sentence, focus, episode, filename, tokens, stemmed tokens, norm_tokens, token_count, sentiment
+        temp_df = pd.DataFrame(
+            [[sentence, focus, 1, '102.txt', tokens, stemmed_tokens, norm_tokens, token_count, ss['compound']]],
+            columns=[
+                'sentence',
+                'focus',
+                'episode',
+                'filename',
+                'tokens',
+                'stemmed_tokens',
+                'norm_tokens',
+                'token_count',
+                'sentiment'
+            ]
+        )
+        tng_df = pd.concat([tng_df, temp_df], ignore_index=True)
+
+# examine the df
+print(tng_df.head(20))
+
+# write the master df to a csv
+tng_df.to_csv('../data/tng_df.csv', sep=',')
+
+
