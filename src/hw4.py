@@ -15,7 +15,7 @@ from nltk.stem.porter import PorterStemmer
 from nltk.stem import WordNetLemmatizer
 from nltk.sentiment import SentimentIntensityAnalyzer
 import difflib
-
+import numpy as np
 """
 @todo:
 - Download https://en.wikipedia.org/wiki/List_of_Star_Trek_characters
@@ -286,8 +286,8 @@ character_df = pd.read_csv('../data/character_df.csv')
 scripts_df.index = scripts_df['focus']
 character_df.index = character_df['character_name']
 
-print(scripts_df.head(5))
-print(character_df.head(5))
+# print(scripts_df.head(5))
+# print(character_df.head(5))
 
 from fuzzywuzzy import fuzz
 from fuzzywuzzy import process
@@ -303,7 +303,7 @@ def get_closest_match(x, list_strings):
         # print(type(x))
         # print(x)
         try:
-            current_score = jellyfish.jaro_winkler(x, current_string)
+            current_score = jellyfish.levenshtein_distance(x, current_string)
             if current_score > highest_jw:
                 highest_jw = current_score
                 best_match = current_string
@@ -312,11 +312,78 @@ def get_closest_match(x, list_strings):
     return best_match
 
 
-character_df.index = tqdm(character_df.index.map(lambda x: get_closest_match(x, scripts_df.index)))
+def fuzzy_match(a, b):
+    left = '1' if pd.isnull(a) else a
+    right = b.fillna('2')
+    print(left, right)
+    out = difflib.get_close_matches(left, right)
+    print(out)
+    return out[0] if out else None
 
-print(character_df)
 
-scripts_df.join(character_df).to_csv('../data/merge_df.csv', sep=',')
+
+
+
+
+scripts_df.index = tqdm(scripts_df.index.map(lambda x: get_closest_match(x, character_df.index)))
+
+# print(scripts_df.head(20))
+
+from pprint import pprint
+pprint(scripts_df.head(100))
+
+
+
+
+
+
+#########################
+##### New Matching ######
+#########################
+
+from pprint import pprint
+# pprint(scripts_df)
+# print(character_df.head())
+print(scripts_df.columns)
+print(character_df.columns)
+
+
+# scripts_df = scripts_df.iloc[1:25]
+#
+# ## Split the focus col for scripts and character name col for character df and removing stop words
+# # scripts_df['focus_split'] = \
+# # print([token for token in scripts_df.focus.str.lower().str.split(" ") if token not in stopwords.words('english')])
+#
+# # scripts_df.focus = ' '.join([token for token in scripts_df.focus.str.split(" ") if token not in stopwords.words('english')])
+# # print(scripts_df.focus)\
+#
+# scripts_df.focus = scripts_df.focus.apply(lambda x: ''.join([item for item in x if item not in stopwords.words("english")]) )
+# print(scripts_df.focus)
+#
+# # character_df['character_name_split'] = [token for token in character_df.character_name.str.lower().str.split(" ") if token not in stopwords.words('english')]
+#
+# # pprint(scripts_df)
+# print("DONE WITH STOP")
+#
+#
+# # Create new dataframe
+# merged_data = scripts_df.copy().iloc[0:3] # @ Note make sure proper copy
+# merged_data['characterName'] = np.nan
+
+# ## For every word in script focus, compare to every word in character df charac name
+#
+# # If have a match, assign character name to merged_data char name
+# for index_script, row_script in merged_data.iterrows():
+#     for index_char, row_char in character_df.iterrows():
+#         try:
+#             matchedChar = bool(set(row_script.focus_split) & set(row_char.character_name_split))
+#             if matchedChar:
+#                 print("MATCH WITH FOCUS: {} and CHAR: {}".format(row_script.focus_split,row_char.character_name_split ))
+#         except TypeError:
+#             continue
+#
+#
+#
 
 
 
