@@ -1,0 +1,132 @@
+,actor_name,appearances,character_name,position,posting,rank,species
+0,Scott Bakula,['ENT'],Jonathan Archer,Commanding Officer,Enterprise NX-01,['Captain'],Human
+1,Tarik Ergin,['VOY'],Ayala,Maquis,USS Voyager,"['Lieutenant, JG']",Human
+2,,['VOY'],Azan,,USS Voyager,['Civilian'],Wysanti
+3,Dwight Schultz,"['TNG', 'FCT', 'VOY']",Reginald Barclay,"Engineering Officer (TNG,Movies)",Starfleet Command,['Lt. Commander'],Human
+4,Philip Anglim,['DS9'],Bareil Antos,Bajoran,Bajor,['Vedek'],Bajoran
+5,Alexander Siddig,"['DS9', 'TNG']",Julian Bashir,Chief Medical Officer,Deep Space 9,['Lieutenant'],Human
+6,Gwynyth Walsh,"['TNG', 'GEN', 'DS9']",B'Etor,First Officer,Bird of Prey,['Commander'],Klingon
+7,John Hoyt,['The Cage'],Phillip Boyce,Chief Medical Officer,USS Enterprise,['Lt. Commander'],Human
+8,Jeffrey Combs,['DS9'],Brunt,Ferengi Commerce Liquidator,Ferenginar,['Civilian'],Ferengi
+9,Josh Clark,['VOY'],,Engineering Officer,USS Voyager,['Lieutenant'],Human
+10,Robert Beltran,['VOY'],Chakotay,Maquis,USS Voyager,['Commander'],Human
+11,Majel Barrett,"['TOS', 'TAS', 'ST:I,IV']",Christine Chapel,"Nurse (TOS, TAS)",Starfleet Command,['Commander'],Human
+12,Derek McGrath,['VOY'],Chell,Maquis,USS Voyager,['Crewman'],Bolian
+13,Laurel Goodwin,['The Cage'],J. M. Colt,Yeoman,USS Enterprise,['Yeoman'],Human
+14,Gates McFadden,"['TNG', 'GEN,FCT,INS,NEM']",Beverly Crusher,Head of Starfleet Medical (S2),USS Enterprise-E,['Commander'],Human
+15,Wil Wheaton,"['TNG', 'NEM']",Wesley Crusher,Helmsman (S1-4),USS Titan,"['Lieutenant, JG']",Human
+16,Anthony De Longis,['VOY'],Jal Culluh,Kazon-Nistrim,Kazon-Nistrim,['First Maje'],Kazon
+17,Kellie Waymire,['ENT'],,Entomologist,Enterprise NX-01,['Crewman'],Human
+18,John Rhys-Davies,['VOY'],Leonardo da Vinci,Holographic Character,USS Voyager,,Hologram
+19,Casey Biggs,['DS9'],Damar,Cardassian Union,Cardassia Prime,['Legate'],Cardassian
+20,Matt Winston,['ENT'],Daniels,Temporal Agent,,['Crewman'],Human
+21,Brent Spiner,"['TNG', 'GEN,FCT,INS,NEM']",Data,Chief Operations Officer,USS Enterprise-E,['Lt. Commander'],Android
+22,Nicole de Boer,['DS9'],Ezri Dax,Counselor,Deep Space 9,"['Lieutenant, JG']",Trill
+23,Terry Farrell,['DS9'],Jadzia Dax,Chief Science Officer,Deep Space 9,['Lt. Commander'],Trill
+24,Randy Oglesby,['ENT'],Degra,Scientist,Xindi Council,['Civilian'],Xindi-Primate
+25,Robert Picardo,['VOY'],The Doctor,Chief Medical Officer,USS Voyager,,Hologram
+26,Scott MacDonald,['ENT'],Dolim,Council Member,Xindi Council,['Commander'],Xindi-Reptilian
+27,Marc Alaimo,['DS9'],Dukat,Cardassian Officer (S1-4),Cardassia Prime,['Gul'],Cardassian
+28,Kenneth Marshall,['DS9'],Michael Eddington,Security Officer (S5-7),Deep Space 9,['Civilian'],Human
+29,Richard Poe,"['TNG', 'DS9', 'VOY']",Evek,Commanding Officer,,['Gul'],Cardassian
+30,Salome Jens,['DS9'],Female Changeling,Dominion,Cardassia Prime,,Changeling
+31,James Darren,['DS9'],Vic Fontaine,Holographic Entertainer,Deep Space 9,,Hologram
+32,Vaughn Armstrong,['ENT'],Maxwell Forrest,NX Project,Starfleet Command,['Vice Admiral'],Human
+33,Andrew Robinson,['DS9'],Elim Garak,Tailor,Deep Space 9,['Civilian'],Cardassian
+34,Adam Roarke,['The Cage'],,Communications Officer,USS Enterprise,['Chief Petty Officer'],Human
+35,Lycia Naff,['TNG'],Sonya Gomez,Engineering Officer,USS Enterprise-D,['Ensign'],Human
+36,Robert O'Reilly,"['TNG', 'DS9']",Gowron,Klingon Empire,Klingon High Council,['Chancellor'],Klingon
+37,Whoopi Goldberg,"['TNG', 'GEN,NEM']",Guinan,Bartender,USS Enterprise-D,['Civilian'],El-Aurian
+38,Steven Culp,['ENT'],J. Hayes,MACO Officer,Enterprise NX-01,['Major'],Human
+39,Ada Maris,['ENT'],Erika Hernandez,Commanding Officer,Columbia NX-02,['Captain'],Human
+40,Simon Billig,['VOY'],,Maquis,USS Voyager,['Ensign'],Human
+41,Carel Struycken,['TNG'],Mr. Homn,Servant,Betazed,['Civilian'],Unknown
+42,Jonathan Del Arco,['TNG'],Hugh of Borg,Borg Drone,,,Borg
+43,Manu Intiraymi,['VOY'],Icheb,Astrometrics,USS Voyager,['Civilian'],Brunali
+44,Kate Mulgrew,"['VOY', 'NEM']",Kathryn Janeway,Commanding Officer (VOY),Starfleet Command,['Vice Admiral'],Human
+45,Rick Worthy,['ENT'],Jannar,Scientist,Xindi Council,['Civilian'],Xindi-Arboreal
+46,Raphael Sbarge,['VOY'],Michael Jonas,Maquis,USS Voyager,['Crewman'],Human
+47,Suzie Plakson,['TNG'],K'Ehleyr,Federation Ambassador,Earth,['Ambassador'],Klingon
+48,Jennifer Lien,['VOY'],Kes,Aeroponics,USS Voyager,['Civilian'],Ocampa
+49,Garrett Wang,['VOY'],Harry Kim,Chief Operations Officer,USS Voyager,['Ensign'],Human
+50,Nana Visitor,['DS9'],Kira Nerys,First Officer (S1-7),Deep Space 9,['Colonel'],Bajoran
+51,John Colicos,"['TOS', 'TAS', 'DS9']",Kor,"Commanding Officer (TOS,TAS)",,['Commander'],Klingon
+52,Tony Todd,"['TNG', 'DS9']",Kurn,Commanding Officer (TNG),Deep Space 9,['Crewman'],Klingon
+53,LeVar Burton,"['TNG', 'GEN,FCT,INS,NEM', 'VOY']",Geordi La Forge,Helmsman (S1),USS Enterprise-E,['Lt. Commander'],Human
+54,Chase Masterson,['DS9'],Leeta,Dabo Girl,Deep Space 9,['Civilian'],Bajoran
+55,Ashley Judd,['TNG'],Robin Lefler,Engineering Officer,USS Enterprise-D,['Ensign'],Human
+56,Richard Beymer,['DS9'],Li Nalas,Liaison Officer,Deep Space 9,['Navarch'],Bajoran
+57,Brent Spiner,['TNG'],Lore,,,['Civilian'],Android
+58,Barbara March,"['TNG', 'GEN', 'DS9']",Lursa,Commanding Officer,Bird of Prey,['Captain'],Klingon
+59,Tiny Ron Taylor,['DS9'],Maihar'du,Grand Nagus,Ferenginar,['Civilian'],Hupyrian
+60,Tucker Smallwood,['ENT'],Mallora,Chairman,Xindi Council,['Civilian'],Xindi-Primate
+61,J. G. Hertzler,['DS9'],Martok,Commander of Klingon Forces (S4-7),Deep Space 9,['Chancellor'],Klingon
+62,Anthony Montgomery,['ENT'],Travis Mayweather,Helmsman,Enterprise NX-01,['Ensign'],Human
+63,Marley S. McClean,['VOY'],Mezoti,,USS Voyager,['Civilian'],Norcadian
+64,Julianna McCarthy,['DS9'],Mila,Housekeeper,Cardassia,['Civilian'],Cardassian
+65,James Sloyan,['DS9'],Mora Pol,Scientist,Bajor,['Civilian'],Bajoran
+66,Mark Allen Shepherd,"['DS9', 'VOY']",Morn,Courier,Deep Space 9,['Civilian'],Lurian
+67,Ken Thorley,['TNG'],Mot,Barber,USS Enterprise-D,['Civilian'],Bolian
+68,Natalia Nogulich,"['TNG', 'DS9']",Alynna Nechayev,Starfleet,Starfleet Command,['Fleet Admiral'],Human
+69,Ethan Phillips,['VOY'],Neelix,Chef (S1-7),USS Voyager,['Ambassador'],Talaxian
+70,,['VOY'],,Engineering Officer,USS Voyager,"['Lieutenant, JG']",Human
+71,Aron Eisenberg,['DS9'],Nog,Student (S1-4),Deep Space 9,"['Lieutenant, JG']",Ferengi
+72,,['VOY'],,Operations Officer,USS Voyager,['Ensign'],Human
+73,Majel Barrett,['The Cage'],Number One,First Officer,USS Enterprise,['Lt. Commander'],Human
+74,Rosalind Chao,"['TNG', 'DS9']",Keiko O'Brien,Botanist (TNG),Deep Space 9,['Civilian'],Human
+75,Colm Meaney,"['TNG', 'DS9']",Miles O'Brien,Helmsman (TNG S1),Starfleet Academy,['Chief Petty Officer'],Human
+76,Hana Hatae,['DS9'],Molly O'Brien,Student,Deep Space 9,['Civilian'],Human
+77,Ren? Auberjonois,['DS9'],Odo,Chief of Security,Deep Space 9,['Constable'],Changeling
+78,Patti Yasutake,"['TNG', 'GEN,FCT']",Alyssa Ogawa,Nurse,USS Enterprise-E,"['Lieutenant, JG']",Human
+79,Camille Saviola,['DS9'],Opaka Sulan,Bajoran,Bajor,['Kai'],Bajoran
+80,Warren Munson,['VOY'],Owen Paris,Pathfinder Project,Starfleet Command,['Admiral'],Human
+81,Robert Duncan McNeill,['VOY'],Tom Paris,Helmsman,USS Voyager,"['Lieutenant, JG']",Human
+82,John Billingsley,['ENT'],Phlox,Chief Medical Officer,Enterprise NX-01,['Civilian'],Denobulan
+83,Patrick Stewart,"['TNG', 'GEN,FCT,INS,NEM', 'DS9']",Jean-Luc Picard,Commanding officer,USS Enterprise-E,['Captain'],Human
+84,Diana Muldaur,['TNG'],Katherine Pulaski,Chief Medical Officer,USS Enterprise-D,['Commander'],Human
+85,John de Lancie,"['TNG', 'DS9', 'VOY']",Q,Q Continuum,Q Continuum,,Q
+86,Armin Shimerman,"['TNG', 'DS9', 'VOY']",Quark,Bar Owner,Deep Space 9,,Ferengi
+87,Grace Lee Whitney,"['TOS', 'ST:I,IV,VI', 'VOY']",Janice Rand,Yeoman (TOS),USS Excelsior,['Commander'],Human
+88,,['VOY'],Rebi,,USS Voyager,['Civilian'],Wysanti
+89,Dominic Keating,['ENT'],Malcolm Reed,Tactical Officer,Enterprise NX-01,['Lieutenant'],Human
+90,Jonathan Frakes,"['TNG', 'GEN,FCT,INS,NEM', 'VOY', 'ENT']",William Riker,"First Officer (S1-7,Movies)",USS Titan,['Captain'],Human
+91,Michelle Forbes,['TNG'],Ro Laren,Helmsman (S5-7),USS Enterprise-D,['Lieutenant'],Bajoran
+92,Max Grod?nchik,['DS9'],Rom,Bar Employee (1-4),Deep Space 9,['Grand Nagus'],Ferengi
+93,Barry Jenner,['DS9'],William Ross,Military Commander,Deep Space 9,['Vice Admiral'],Human
+94,Joseph Will,['ENT'],,Engineering Officer,Enterprise NX-01,['Crewman'],Human
+95,Linda Park,['ENT'],Hoshi Sato,Communications Officer,Enterprise NX-01,['Ensign'],Human
+96,Denise Crosby,['TNG'],Sela,Romulan Officer,,['Commander'],Romulan
+97,Martha Hackett,['VOY'],Seska,Kazon,Kazon-Nistrim,['Ensign'],Cardassian
+98,Jeri Ryan,['VOY'],Seven of Nine,Astrometrics,USS Voyager,['Civilian'],Human
+99,Duncan Regehr,['DS9'],Shakaar Edon,Bajor,Bajor,,Bajoran
+100,Jeffrey Combs,['ENT'],Thy'lek Shran,Andorian,,['General'],Andorian
+101,John Fleck,['ENT'],Silik,Terrorist,Suliban Cabal,,Suliban
+102,Avery Brooks,['DS9'],Benjamin Sisko,Commanding Officer,Deep Space 9,['Captain'],Human
+103,Cirroc Lofton,['DS9'],Jake Sisko,Student (S1-5),Deep Space 9,['Civilian'],Human
+104,Felecia M. Bell,['DS9'],Jennifer Sisko,Starfleet Officer (S1),USS Saratoga,['Lieutenant'],Human
+105,Brock Peters,['DS9'],Joseph Sisko,Restaurant Owner,Earth,['Civilian'],Human
+106,Deborah Lacey,['DS9'],Sarah Sisko,Holophotographer,Earth,['Civilian'],Human
+107,William Sadler,['DS9'],Luther Sloan,Intelligence Operative,Section 31,,Human
+108,Gary Graham,['ENT'],Soval,Vulcan,Earth,['Ambassador'],Vulcan
+109,Brad Dourif,['VOY'],Lon Suder,Maquis,USS Voyager,['Crewman'],Betazoid
+110,Paul Dooley,['DS9'],Enabran Tain,Obsidian Order,Cardassia,,Cardassian
+111,Zoe McLellan,['VOY'],Tal Celes,Operations Officer,USS Voyager,['Crewman'],Bajoran
+112,Andreas Katsulas,['TNG'],Tomalak,Commanding Officer,,['Commander'],Romulan
+113,Roxann Dawson,['VOY'],B'Elanna Torres,Maquis,USS Voyager,"['Lieutenant, JG']",Klingon
+114,Jolene Blalock,['ENT'],T'Pol,Science Officer,Enterprise NX-01,['Commander'],Vulcan
+115,Eric Menyuk,['TNG'],The Traveler,,Tau Alpha C,['Civilian'],Unknown
+116,Marina Sirtis,"['TNG', 'GEN,FCT,INS,NEM', 'VOY', 'ENT']",Deanna Troi,"Counselor (S1-7,Movies)",USS Titan,['Commander'],Betazoid
+117,Majel Barrett,"['TNG', 'DS9']",Lwaxana Troi,Federation Ambassador,Betazed,['Ambassador'],Betazoid
+118,Connor Trinneer,['ENT'],Charles Tucker,Chief Engineer,Enterprise NX-01,['Commander'],Human
+119,Tim Russ,['VOY'],Tuvok,Chief of Security,USS Voyager,['Lt. Commander'],Vulcan
+120,Peter Duryea,['The Cage'],Jos? Tyler,Helmsman,USS Enterprise,['Lieutenant'],Human
+121,Jennifer Hetrick,"['TNG', 'DS9']",Vash,Archeologist,Earth,['Civilian'],Human
+122,Alexander Enberg,['VOY'],Vorik,Engineering Officer,USS Voyager,['Ensign'],Vulcan
+123,Jeffrey Combs,['DS9'],Weyoun,Dominion,Cardassia Prime,,Vorta
+124,Scarlett Pomers,['VOY'],Naomi Wildman,Captain's Assistant (unofficial),USS Voyager,['Civilian'],Ktarian
+125,Nancy Hower,['VOY'],Samantha Wildman,Science Officer,USS Voyager,['Ensign'],Human
+126,Louise Fletcher,['DS9'],Winn Adami,Bajoran,Bajor,['Kai'],Bajoran
+127,Michael Dorn,"['TNG', 'GEN,FCT,INS,NEM', 'DS9']",Worf,Helmsman (TNG S1),USS Enterprise-E,['Lt. Commander'],Klingon
+128,Denise Crosby,['TNG'],Tasha Yar,Chief Security Officer,USS Enterprise-D,['Lieutenant'],Human
+129,Penny Johnson Jerald,['DS9'],Kasidy Yates,Freighter Captain,Deep Space 9,['Captain'],Human
+130,Wallace Shawn,['DS9'],Zek,Leader of Ferengi Economics,Ferenginar,['Grand Nagus'],Ferengi

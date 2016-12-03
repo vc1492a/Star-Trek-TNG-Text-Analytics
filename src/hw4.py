@@ -39,26 +39,113 @@ from nltk.sentiment import SentimentIntensityAnalyzer
 # www.st-minutiae.com/resources/scripts/
 
 ## download any other relevant data, such as the planet table
-print('Fetching planetary table...')
-# use requests library to get the main page content
-r = requests.get('http://www.startrekmap.com/library/maplist.html').text
-# use BS4 to locate the div with class
-r_soup = BeautifulSoup(r, 'html.parser')
-planet_table = str((r_soup.find_all('table'))[0])
-planet_table_df_list = pd.read_html(planet_table)
-planet_table_df = pd.DataFrame(planet_table_df_list[5])
-planet_table_df = planet_table_df.rename(index=str, columns={0: "Designation",
-                                                             1: "Quadrant",
-                                                             2: "Affiliation",
-                                                             3: "Status"})
-# convert beta character to "b"
-planet_table_df['Quadrant'] = planet_table_df['Quadrant'].str.replace('ß', 'b')
-# write to csv
-planet_table_df.to_csv('../data/planets_df.csv', sep=',')
-print('Retrieved planetary table:')
-print(planet_table_df.head(10))
+# print('Fetching planetary table...')
+# # use requests library to get the main page content
+# r = requests.get('http://www.startrekmap.com/library/maplist.html').text
+# # use BS4 to locate the div with class
+# r_soup = BeautifulSoup(r, 'html.parser')
+# planet_table = str((r_soup.find_all('table'))[0])
+# planet_table_df_list = pd.read_html(planet_table)
+# planet_table_df = pd.DataFrame(planet_table_df_list[5])
+# planet_table_df = planet_table_df.rename(index=str, columns={0: "Designation",
+#                                                              1: "Quadrant",
+#                                                              2: "Affiliation",
+#                                                              3: "Status"})
+# # convert beta character to "b"
+# planet_table_df['Quadrant'] = planet_table_df['Quadrant'].str.replace('ß', 'b')
+# # write to csv
+# planet_table_df.to_csv('../data/planets_df.csv', sep=',')
+# print('Retrieved planetary table:')
+# print(planet_table_df.head(10))
 
 # --------
+
+## download the table of characters, which provides species, actor, rank, posting, and position information
+print('Fetching character table...')
+# use requests library to get the main page content
+r = requests.get('https://en.wikipedia.org/wiki/List_of_Star_Trek_characters').text
+# use BS4 to locate the div with class wikitable
+r_soup = BeautifulSoup(r, 'html.parser')
+wiki_tables = r_soup.find_all('table', {"class": "wikitable"})
+# the first table is a list of star trek series, so the second table is the table we want to work with
+# print(wiki_tables[1])
+
+# create the dataframe we will add our data to
+character_df = pd.DataFrame(columns=[
+    'character_name',
+    'actor_name',
+    'rank',
+    'posting',
+    'position',
+    'species',
+    ]
+)
+
+
+for entry in tqdm(str(wiki_tables[1]).split('<tr>')):
+    character = str(BeautifulSoup(entry, 'html.parser')).split('<td>')
+    # characters with lengths of 4 represent secondary actors for a given role
+    # for example, Spock is played by Leonard Nimoy in the original series and TNG, but is played by
+    # Zachary Quinto in the J.J. Abrahams reboot films.
+    # handle this by having an list of actors in the data frame
+
+    if len(character) == 8:
+        try:
+            character_name = re.findall('<a.*?>(.+?)</a>', character[1])[0]
+        except IndexError:
+            character_name = None
+        try:
+            actor_name = re.findall('<a.*?>(.+?)</a>', character[2])[0]
+        except IndexError:
+            actor_name = None
+        try:
+            rank = [re.sub('<[^<]+?>', '', re.findall('<a.*?>(.+?)</a>', character[4])[0])]
+        except IndexError:
+            rank = None
+        appearances = re.findall('<i.*?>(.+?)</i>', character[3])
+
+        try:
+            posting = re.sub('<[^<]+?>', '', re.findall('<a.*?>(.+?)</a>', character[5])[0])
+        except IndexError:
+            posting = None
+        # posting = re.findall('<a.*?>(.+?)</a>', character[5])
+        try:
+            if 'href' not in re.findall('(.+?)</td>', character[6])[0]:
+                position = re.sub('<[^<]+?>','', re.findall('(.+?)</td>', character[6])[0])
+            else:
+                position = re.findall('<a.*?>(.+?)</a>', character[6])[0]
+        except IndexError:
+            position = None
+        # need to clean up position
+        species = re.findall('(.+?)</td>', character[7])
+        if 'href' not in re.findall('(.+?)</td>', character[7])[0]:
+            species = re.findall('(.+?)</td>', character[7])[0]
+        else:
+            species = re.findall('<a.*?>(.+?)</a>', character[7])[0]
+
+        temp_df = pd.DataFrame(
+                [[character_name, actor_name, rank, appearances, posting, position, species]],
+                columns=[
+                    'character_name',
+                    'actor_name',
+                    'rank',
+                    'appearances',
+                    'posting',
+                    'position',
+                    'species',
+                ]
+            )
+        character_df = pd.concat([character_df, temp_df], ignore_index=True)
+
+    # NOTE: does not support multi actor characters right now, which excludes Spock and Montgomery Scott
+    # if len(character) == 2:
+    #     print(character)
+
+# examine the dataframe
+print(character_df.head(20))
+
+# write the df to a csv
+character_df.to_csv('../data/character_df.csv', sep=',')
 
 # load any nltk tools we will use
 porter_stemmer = PorterStemmer()
@@ -66,7 +153,7 @@ wordnet_lemmatizer = WordNetLemmatizer()
 sid = SentimentIntensityAnalyzer()
 
 # create the dataframe we will add our text data to
-tng_df = pd.DataFrame(columns=[
+script_df = pd.DataFrame(columns=[
     'sentence',
     'focus',
     'episode',
@@ -174,19 +261,16 @@ for file in os.listdir("../data/scripts"):
                         'sentiment'
                     ]
                 )
-                tng_df = pd.concat([tng_df, temp_df], ignore_index=True)
+                script_df = pd.concat([script_df, temp_df], ignore_index=True)
     episode_counter += 1
     print('\n')
 
 
 # examine the df
-print(tng_df.head(20))
+print(script_df.head(20))
 
 # write the master df to a csv
-tng_df.to_csv('../data/tng_df.csv', sep=',')
-
-
-
+script_df.to_csv('../data/script_df.csv', sep=',')
 
 
 # other ideas for dataframe
