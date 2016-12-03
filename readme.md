@@ -14,6 +14,7 @@ Generation.
     - requests
     - beautiful soup
     - nltk
+    - jellyfish
     <!--- pycorenlp-->
 <!--- Java-->
     <!--- Stanford CoreNLP (v3.6.0)-->
