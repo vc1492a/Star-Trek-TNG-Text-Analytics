@@ -16,6 +16,9 @@ from nltk.stem import WordNetLemmatizer
 from nltk.sentiment import SentimentIntensityAnalyzer
 import difflib
 import numpy as np
+from pprint import pprint
+
+
 """
 @todo:
 - Download https://en.wikipedia.org/wiki/List_of_Star_Trek_characters
@@ -341,7 +344,8 @@ character_df = pd.read_csv('../data/character_df.csv')
 ##### New Matching ######
 #########################
 
-from pprint import pprint
+##### @UNCOMMENT this if don't want to read csv with split text #####
+
 # pprint(scripts_df)
 # print(character_df.head())
 print(scripts_df.columns)
@@ -352,38 +356,77 @@ print(character_df.columns)
 # ALso replace np.nan with N/A string
 # scripts_df = scripts_df.iloc[1:5]
 
-scripts_df.focus = scripts_df.focus.fillna(value = "N/A")
-character_df.character_name = character_df.character_name.fillna(value = "N/A")
+scripts_df.focus = scripts_df.focus.fillna(value="NA")
+character_df.character_name = character_df.character_name.fillna(value="NA")
 
-scripts_df['focus_split'] = scripts_df['focus'].apply(lambda x: [item.lower() for item in x.split(' ') if item.lower() not in stopwords.words('english')])
-character_df['character_name_split'] = character_df.character_name.apply(lambda x: [item.lower() for item in x.split(' ') if item.lower() not in stopwords.words('english')])
+## Create all character text - use this to filter out text that id not in character text
+allCharacter_text = ' '.join(character_df.character_name.tolist()).split(' ')
+allCharacter_text = set(map(lambda x: x.lower(), allCharacter_text))
+
+## Set lower case script focus and character name (in char df)
+scripts_df.focus = scripts_df.focus.str.lower()
+character_df.character_name = character_df.character_name.str.lower()
+
+
+# print(allCharacter_text)
+# print(scripts_df.focus.iloc[1:100])
+# print(character_df.character_name[1:100])
+
+pprint(scripts_df)
+pprint(character_df)
+
+# Split
+scripts_df['focus_split'] = scripts_df['focus'].apply(lambda x: [item for item in x.split(' ') if (item not in stopwords.words('english')) and (item in allCharacter_text)])
+character_df['character_name_split'] = character_df.character_name.apply(lambda x: [item for item in x.split(' ') if item not in stopwords.words('english')])
+
+# print(scripts_df.focus_split[1:100])
 
 print("SPLIT AND REMOVED STOP WORDS")
 
-# Create new dataframe
-merged_data = scripts_df.copy()#.iloc[0:3] # @ Note make sure proper copy
-merged_data['characterName'] = np.nan
+
+# Write to csv
+scripts_df.to_csv("scripts_df.csv")
+character_df.to_csv("character_df.csv")
+#
+# Read from cv
+# scripts_df = pd.read_csv("scripts_df.csv")
+# character_df = pd.read_csv("character_df.csv")
 
 """
 @Note:
 - Save the files to avoid having to read
 - Remove mom troi (@Valentinou)
-- Remove from script focus all words that are not in character name @IMPORTANT!!!!! 
+- Remove from script focus all words that are not in character name @IMPORTANT!!!!!
+- For things like star trek the next generation - add them in character_df text.
 """
 
-## For every word in script focus, compare to every word in character df charac name
+# Create new dataframe
+merged_data = scripts_df.copy()#.iloc[0:3] # @ Note make sure proper copy
+merged_data['characterName'] = np.nan
 
+pprint(merged_data.focus_split)
+
+# For every word in script focus, compare to every word in character df charac name
+
+merged_data = merged_data.iloc[1:100]
+character_df = character_df.iloc[1:100]
 # If have a match, assign character name to merged_data char name
-for index_script, row_script in merged_data.iterrows():
+for index_script, row_script in tqdm(merged_data.iterrows()):
     if index_script % 50 == 0:
         print(index_script)
     for index_char, row_char in character_df.iterrows():
         try:
             matchedChar = bool(set(row_script.focus_split) & set(row_char.character_name_split))
-            if matchedChar:
-                print("MATCH WITH FOCUS: {} and CHAR: {}".format(row_script.focus_split,row_char.character_name_split ))
+            if matchedChar: # @note change because this only one (first???) match
+                merged_data.loc[index_script, "characterName"] = row_char.character_name
+                # print(merged_data.loc[index_script, "characterName"])
+                # print("MATCH WITH FOCUS: {} and CHAR: {}".format(row_script.focus_split, row_char.character_name_split ))
         except TypeError:
             continue
+
+# merged_data.to_csv("script_df_withCharName.csv")
+
+pprint(merged_data)
 
 
 
