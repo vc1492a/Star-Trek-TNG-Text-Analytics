@@ -356,6 +356,14 @@ print(character_df.columns)
 # ALso replace np.nan with N/A string
 # scripts_df = scripts_df.iloc[1:5]
 
+## Why where there nas in the beginning???
+# Remove NAs in scripts df
+scripts_df = scripts_df[pd.notnull(scripts_df['focus'])]
+scripts_df = scripts_df[pd.notnull(scripts_df['sentence'])]
+scripts_df = scripts_df[(scripts_df.astype(str)['tokens'] != '[]')]
+# print(scripts_df[scripts_df.isnull().any(axis=1)])
+print(scripts_df.shape[0])
+
 scripts_df.focus = scripts_df.focus.fillna(value="NA")
 character_df.character_name = character_df.character_name.fillna(value="NA")
 
@@ -372,14 +380,17 @@ character_df.character_name = character_df.character_name.str.lower()
 # print(scripts_df.focus.iloc[1:100])
 # print(character_df.character_name[1:100])
 
-pprint(scripts_df)
-pprint(character_df)
+# pprint(scripts_df)
+# pprint(character_df)
 
 # Split
 scripts_df['focus_split'] = scripts_df['focus'].apply(lambda x: [item for item in x.split(' ') if (item not in stopwords.words('english')) and (item in allCharacter_text)])
 character_df['character_name_split'] = character_df.character_name.apply(lambda x: [item for item in x.split(' ') if item not in stopwords.words('english')])
 
-# print(scripts_df.focus_split[1:100])
+### Remove focus splits that are empty
+scripts_df = scripts_df[(scripts_df.astype(str)['focus_split'] != '[]')]
+print(scripts_df[scripts_df.isnull().any(axis=1)])
+print(scripts_df.shape[0])
 
 print("SPLIT AND REMOVED STOP WORDS")
 
@@ -404,13 +415,12 @@ character_df.to_csv("character_df.csv")
 merged_data = scripts_df.copy()#.iloc[0:3] # @ Note make sure proper copy
 merged_data['characterName'] = np.nan
 
-pprint(merged_data.focus_split)
 
 # For every word in script focus, compare to every word in character df charac name
-
-merged_data = merged_data.iloc[1:100]
-character_df = character_df.iloc[1:100]
 # If have a match, assign character name to merged_data char name
+print(merged_data[merged_data.isnull().any(axis=1)])
+pprint(merged_data)
+
 for index_script, row_script in tqdm(merged_data.iterrows()):
     if index_script % 50 == 0:
         print(index_script)
@@ -419,16 +429,14 @@ for index_script, row_script in tqdm(merged_data.iterrows()):
             matchedChar = bool(set(row_script.focus_split) & set(row_char.character_name_split))
             if matchedChar: # @note change because this only one (first???) match
                 merged_data.loc[index_script, "characterName"] = row_char.character_name
-                # print(merged_data.loc[index_script, "characterName"])
                 # print("MATCH WITH FOCUS: {} and CHAR: {}".format(row_script.focus_split, row_char.character_name_split ))
+                # print(merged_data.loc[index_script, "characterName"])
         except TypeError:
             continue
 
-# merged_data.to_csv("script_df_withCharName.csv")
+merged_data.to_csv("script_df_withCharName.csv")
 
 pprint(merged_data)
-
-
 
 
 
