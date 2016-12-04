@@ -2,9 +2,9 @@
 from bs4 import BeautifulSoup
 import requests
 import pandas as pd
-import jellyfish
-import lxml
-import html5lib
+# import jellyfish
+# import lxml
+# import html5lib
 import json
 import os
 import string
@@ -283,55 +283,55 @@ import numpy as np
 ## merge the two dataframes using a fuzzy match
 scripts_df = pd.read_csv('../data/scripts_df.csv')
 character_df = pd.read_csv('../data/character_df.csv')
-scripts_df.index = scripts_df['focus']
-character_df.index = character_df['character_name']
+# scripts_df.index = scripts_df['focus']
+# character_df.index = character_df['character_name']
 
 # print(scripts_df.head(5))
 # print(character_df.head(5))
+#
+# from fuzzywuzzy import fuzz
+# from fuzzywuzzy import process
+# from numpy import NaN
+#
+#
+# def get_closest_match(x, list_strings):
+#     best_match = None
+#     highest_jw = 0
+#     for current_string in list_strings:
+#         # print(type(current_string))
+#         # print(current_string)
+#         # print(type(x))
+#         # print(x)
+#         try:
+#             current_score = jellyfish.levenshtein_distance(x, current_string)
+#             if current_score > highest_jw:
+#                 highest_jw = current_score
+#                 best_match = current_string
+#         except TypeError:
+#             continue
+#     return best_match
+#
+#
+# def fuzzy_match(a, b):
+#     left = '1' if pd.isnull(a) else a
+#     right = b.fillna('2')
+#     print(left, right)
+#     out = difflib.get_close_matches(left, right)
+#     print(out)
+#     return out[0] if out else None
+#
+#
+#
 
-from fuzzywuzzy import fuzz
-from fuzzywuzzy import process
-from numpy import NaN
 
 
-def get_closest_match(x, list_strings):
-    best_match = None
-    highest_jw = 0
-    for current_string in list_strings:
-        # print(type(current_string))
-        # print(current_string)
-        # print(type(x))
-        # print(x)
-        try:
-            current_score = jellyfish.levenshtein_distance(x, current_string)
-            if current_score > highest_jw:
-                highest_jw = current_score
-                best_match = current_string
-        except TypeError:
-            continue
-    return best_match
-
-
-def fuzzy_match(a, b):
-    left = '1' if pd.isnull(a) else a
-    right = b.fillna('2')
-    print(left, right)
-    out = difflib.get_close_matches(left, right)
-    print(out)
-    return out[0] if out else None
-
-
-
-
-
-
-scripts_df.index = tqdm(scripts_df.index.map(lambda x: get_closest_match(x, character_df.index)))
+# scripts_df.index = tqdm(scripts_df.index.map(lambda x: get_closest_match(x, character_df.index)))
 
 # print(scripts_df.head(20))
-
-from pprint import pprint
-pprint(scripts_df.head(100))
-
+#
+# from pprint import pprint
+# pprint(scripts_df.head(100))
+#
 
 
 
@@ -348,42 +348,45 @@ print(scripts_df.columns)
 print(character_df.columns)
 
 
-# scripts_df = scripts_df.iloc[1:25]
-#
-# ## Split the focus col for scripts and character name col for character df and removing stop words
-# # scripts_df['focus_split'] = \
-# # print([token for token in scripts_df.focus.str.lower().str.split(" ") if token not in stopwords.words('english')])
-#
-# # scripts_df.focus = ' '.join([token for token in scripts_df.focus.str.split(" ") if token not in stopwords.words('english')])
-# # print(scripts_df.focus)\
-#
-# scripts_df.focus = scripts_df.focus.apply(lambda x: ''.join([item for item in x if item not in stopwords.words("english")]) )
-# print(scripts_df.focus)
-#
-# # character_df['character_name_split'] = [token for token in character_df.character_name.str.lower().str.split(" ") if token not in stopwords.words('english')]
-#
-# # pprint(scripts_df)
-# print("DONE WITH STOP")
-#
-#
-# # Create new dataframe
-# merged_data = scripts_df.copy().iloc[0:3] # @ Note make sure proper copy
-# merged_data['characterName'] = np.nan
+## Split the columns and remove the stop words.
+# ALso replace np.nan with N/A string
+# scripts_df = scripts_df.iloc[1:5]
 
-# ## For every word in script focus, compare to every word in character df charac name
-#
-# # If have a match, assign character name to merged_data char name
-# for index_script, row_script in merged_data.iterrows():
-#     for index_char, row_char in character_df.iterrows():
-#         try:
-#             matchedChar = bool(set(row_script.focus_split) & set(row_char.character_name_split))
-#             if matchedChar:
-#                 print("MATCH WITH FOCUS: {} and CHAR: {}".format(row_script.focus_split,row_char.character_name_split ))
-#         except TypeError:
-#             continue
-#
-#
-#
+scripts_df.focus = scripts_df.focus.fillna(value = "N/A")
+character_df.character_name = character_df.character_name.fillna(value = "N/A")
+
+scripts_df['focus_split'] = scripts_df['focus'].apply(lambda x: [item.lower() for item in x.split(' ') if item.lower() not in stopwords.words('english')])
+character_df['character_name_split'] = character_df.character_name.apply(lambda x: [item.lower() for item in x.split(' ') if item.lower() not in stopwords.words('english')])
+
+print("SPLIT AND REMOVED STOP WORDS")
+
+# Create new dataframe
+merged_data = scripts_df.copy()#.iloc[0:3] # @ Note make sure proper copy
+merged_data['characterName'] = np.nan
+
+"""
+@Note:
+- Save the files to avoid having to read
+- Remove mom troi (@Valentinou)
+- Remove from script focus all words that are not in character name @IMPORTANT!!!!! 
+"""
+
+## For every word in script focus, compare to every word in character df charac name
+
+# If have a match, assign character name to merged_data char name
+for index_script, row_script in merged_data.iterrows():
+    if index_script % 50 == 0:
+        print(index_script)
+    for index_char, row_char in character_df.iterrows():
+        try:
+            matchedChar = bool(set(row_script.focus_split) & set(row_char.character_name_split))
+            if matchedChar:
+                print("MATCH WITH FOCUS: {} and CHAR: {}".format(row_script.focus_split,row_char.character_name_split ))
+        except TypeError:
+            continue
+
+
+
 
 
 
