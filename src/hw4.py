@@ -21,10 +21,10 @@ from pprint import pprint
 
 """
 @todo:
-- Download https://en.wikipedia.org/wiki/List_of_Star_Trek_characters
-- Export the plantery table to csv file.
 - Join Character table with the big table (script table)
 - Check how to join planet with dialogue tables.
+- Download https://en.wikipedia.org/wiki/List_of_Star_Trek:_The_Next_Generation_episodes
+- Merge the episode table with the script df
 """
 
 # NOTE: We decided to have more of a scripting approach to this project, it being more exploratory in nature.
@@ -284,8 +284,8 @@ from pprint import pprint
 # severely slowing down the processing speed.
 
 ## merge the two dataframes using a fuzzy match
-scripts_df = pd.read_csv('../data/scripts_df.csv')
-character_df = pd.read_csv('../data/character_df.csv')
+# scripts_df = pd.read_csv('../data/scripts_df.csv')
+# character_df = pd.read_csv('../data/character_df.csv')
 # scripts_df.index = scripts_df['focus']
 # character_df.index = character_df['character_name']
 
@@ -348,32 +348,32 @@ character_df = pd.read_csv('../data/character_df.csv')
 
 # pprint(scripts_df)
 # print(character_df.head())
-print(scripts_df.columns)
-print(character_df.columns)
-
-
-## Split the columns and remove the stop words.
-# ALso replace np.nan with N/A string
-# scripts_df = scripts_df.iloc[1:5]
-
-## Why where there nas in the beginning???
-# Remove NAs in scripts df
-scripts_df = scripts_df[pd.notnull(scripts_df['focus'])]
-scripts_df = scripts_df[pd.notnull(scripts_df['sentence'])]
-scripts_df = scripts_df[(scripts_df.astype(str)['tokens'] != '[]')]
-# print(scripts_df[scripts_df.isnull().any(axis=1)])
-print(scripts_df.shape[0])
-
-scripts_df.focus = scripts_df.focus.fillna(value="NA")
-character_df.character_name = character_df.character_name.fillna(value="NA")
-
-## Create all character text - use this to filter out text that id not in character text
-allCharacter_text = ' '.join(character_df.character_name.tolist()).split(' ')
-allCharacter_text = set(map(lambda x: x.lower(), allCharacter_text))
-
-## Set lower case script focus and character name (in char df)
-scripts_df.focus = scripts_df.focus.str.lower()
-character_df.character_name = character_df.character_name.str.lower()
+# print(scripts_df.columns)
+# print(character_df.columns)
+#
+#
+# ## Split the columns and remove the stop words.
+# # ALso replace np.nan with N/A string
+# # scripts_df = scripts_df.iloc[1:5]
+#
+# ## Why where there nas in the beginning???
+# # Remove NAs in scripts df
+# scripts_df = scripts_df[pd.notnull(scripts_df['focus'])]
+# scripts_df = scripts_df[pd.notnull(scripts_df['sentence'])]
+# scripts_df = scripts_df[(scripts_df.astype(str)['tokens'] != '[]')]
+# # print(scripts_df[scripts_df.isnull().any(axis=1)])
+# print(scripts_df.shape[0])
+#
+# scripts_df.focus = scripts_df.focus.fillna(value="NA")
+# character_df.character_name = character_df.character_name.fillna(value="NA")
+#
+# ## Create all character text - use this to filter out text that id not in character text
+# allCharacter_text = ' '.join(character_df.character_name.tolist()).split(' ')
+# allCharacter_text = set(map(lambda x: x.lower(), allCharacter_text))
+#
+# ## Set lower case script focus and character name (in char df)
+# scripts_df.focus = scripts_df.focus.str.lower()
+# character_df.character_name = character_df.character_name.str.lower()
 
 
 # print(allCharacter_text)
@@ -383,66 +383,78 @@ character_df.character_name = character_df.character_name.str.lower()
 # pprint(scripts_df)
 # pprint(character_df)
 
-# Split
-scripts_df['focus_split'] = scripts_df['focus'].apply(lambda x: [item for item in x.split(' ') if (item not in stopwords.words('english')) and (item in allCharacter_text)])
-character_df['character_name_split'] = character_df.character_name.apply(lambda x: [item for item in x.split(' ') if item not in stopwords.words('english')])
-
-### Remove focus splits that are empty
-scripts_df = scripts_df[(scripts_df.astype(str)['focus_split'] != '[]')]
-print(scripts_df[scripts_df.isnull().any(axis=1)])
-print(scripts_df.shape[0])
-
-print("SPLIT AND REMOVED STOP WORDS")
-
-
-# Write to csv
-scripts_df.to_csv("scripts_df.csv")
-character_df.to_csv("character_df.csv")
+# # Split
+# scripts_df['focus_split'] = scripts_df['focus'].apply(lambda x: [item for item in x.split(' ') if (item not in stopwords.words('english')) and (item in allCharacter_text)])
+# character_df['character_name_split'] = character_df.character_name.apply(lambda x: [item for item in x.split(' ') if item not in stopwords.words('english')])
 #
-# Read from cv
-# scripts_df = pd.read_csv("scripts_df.csv")
-# character_df = pd.read_csv("character_df.csv")
+# ### Remove focus splits that are empty
+# scripts_df = scripts_df[(scripts_df.astype(str)['focus_split'] != '[]')]
+# print(scripts_df[scripts_df.isnull().any(axis=1)])
+# print(scripts_df.shape[0])
+#
+# print("SPLIT AND REMOVED STOP WORDS")
+#
+#
+# # Write to csv
+# scripts_df.to_csv("../data/scripts_df.csv")
+# character_df.to_csv("../data/character_df.csv")
+# #
+# # Read from cv
+# # scripts_df = pd.read_csv("scripts_df.csv")
+# # character_df = pd.read_csv("character_df.csv")
+#
+# """
+# @Note:
+# - Save the files to avoid having to read
+# - Remove mom troi (@Valentino)
+# - Remove from script focus all words that are not in character name @IMPORTANT!!!!!
+# - For things like star trek the next generation - add them in character_df text.
+# """
+#
+# # Create new dataframe
+# merged_data = scripts_df.copy() #.iloc[0:3] # @ Note make sure proper copy
+# merged_data['characterName'] = np.nan
+# print(merged_data.shape[0])
+#
+# # For every word in script focus, compare to every word in character df charac name
+# # If have a match, assign character name to merged_data char name
+# print(merged_data[merged_data.isnull().any(axis=1)])
+# pprint(merged_data)
+#
+# for index_script, row_script in merged_data.iterrows():
+#     if index_script % 250 == 0:
+#         print(index_script)
+#     for index_char, row_char in character_df.iterrows():
+#         try:
+#             matchedChar = bool(set(row_script.focus_split) & set(row_char.character_name_split))
+#             if matchedChar: # @note change because this only one (first???) match
+#                 merged_data.loc[index_script, "characterName"] = row_char.character_name
+#                 # print("MATCH WITH FOCUS: {} and CHAR: {}".format(row_script.focus_split, row_char.character_name_split ))
+#                 # print(merged_data.loc[index_script, "characterName"])
+#         except TypeError:
+#             continue
+#
+# merged_data.to_csv("../data/script_df_withCharName.csv")
+#
+# pprint(merged_data)
 
-"""
-@Note:
-- Save the files to avoid having to read
-- Remove mom troi (@Valentinou)
-- Remove from script focus all words that are not in character name @IMPORTANT!!!!!
-- For things like star trek the next generation - add them in character_df text.
-"""
+# read in the script data with the character names
 
-# Create new dataframe
-merged_data = scripts_df.copy()#.iloc[0:3] # @ Note make sure proper copy
-merged_data['characterName'] = np.nan
-
-
-# For every word in script focus, compare to every word in character df charac name
-# If have a match, assign character name to merged_data char name
-print(merged_data[merged_data.isnull().any(axis=1)])
-pprint(merged_data)
-
-for index_script, row_script in tqdm(merged_data.iterrows()):
-    if index_script % 50 == 0:
-        print(index_script)
-    for index_char, row_char in character_df.iterrows():
-        try:
-            matchedChar = bool(set(row_script.focus_split) & set(row_char.character_name_split))
-            if matchedChar: # @note change because this only one (first???) match
-                merged_data.loc[index_script, "characterName"] = row_char.character_name
-                # print("MATCH WITH FOCUS: {} and CHAR: {}".format(row_script.focus_split, row_char.character_name_split ))
-                # print(merged_data.loc[index_script, "characterName"])
-        except TypeError:
-            continue
-
-merged_data.to_csv("script_df_withCharName.csv")
-
-pprint(merged_data)
-
-
-
-
-
-
+# scripts_df_withCharName = pd.read_csv('../data/script_df_withCharName.csv')
+# print(scripts_df_withCharName.head(10))
+# print(scripts_df_withCharName.columns)
+#
+# # merge the scripts df with the character df
+# character_df = pd.read_csv('../data/character_df.csv')
+# scripts_character_df = pd.merge(scripts_df_withCharName, character_df, left_on='characterName', right_on='character_name')
+# # drop columns that are fucked up
+# scripts_character_df = scripts_character_df.drop(scripts_character_df.columns[[0, 1, 2, 3, 15, 16, 17, 18]], axis=1)
+# print(scripts_character_df)
+# print(scripts_character_df.shape[0])
+# print(scripts_character_df.columns)
+#
+# # write this to a csv file
+# scripts_character_df.to_csv('../data/scripts_character_df.csv', sep=',')
 
 ## then do some count stuff
 ## count the occurrences of make it so in each episode, similarly engage
