@@ -57,15 +57,15 @@ def plotly_line_dual_ax(y1, y2, x, y1_title, y2_title, main_title, file_title):
     return py.plot(fig, filename=file_title)
 
 
-# mean_token_sentiment_plot = plotly_line_dual_ax(
-#     episode_groupby['token_count'],
-#     episode_groupby['sentiment'],
-#     episode_groupby.index,
-#     'Mean Token Count',
-#     'Mean Sentiment',
-#     'Mean Token Count and Sentiment by Episode',
-#     'Mean Token Count and Sentiment by Episode'
-# )
+mean_token_sentiment_plot = plotly_line_dual_ax(
+    episode_groupby['token_count'],
+    episode_groupby['sentiment'],
+    episode_groupby.index,
+    'Mean Token Count',
+    'Mean Sentiment',
+    'Mean Token Count and Sentiment by Episode',
+    'Mean Token Count and Sentiment by Episode'
+)
 
 # the graph someone shows that the average token count and average sentiment follow roughly the same path
 # that's interesting, as it suggests episodes with more spoken word are also more positive

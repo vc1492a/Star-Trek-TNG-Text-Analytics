@@ -155,33 +155,31 @@ from pprint import pprint
 
 
 ## download the table of episode names and related information
-print('Fetching episode table...')
-# use requests library to get the main page content
-r = requests.get('https://en.wikipedia.org/wiki/List_of_Star_Trek:_The_Next_Generation_episodes').text
-# use BS4 to locate the div with class wikitable
-r_soup = BeautifulSoup(r, 'html.parser')
-wiki_tables = r_soup.find_all('table', {"class": "wikitable"})
-num_seasons = 7
-episode_df = pd.DataFrame()
-for i in range(1, num_seasons + 1):
-    print(i)
-    season = pd.read_html(str(wiki_tables[i]))
-    season_df = pd.DataFrame(season[0])
-    season_df.columns = season_df.iloc[0]
-    season_df = season_df.ix[1:]
-    episode_df = pd.concat([episode_df, season_df])
-
-episode_df = pd.DataFrame(episode_df)
-episode_df['merge_index'] = range(1, len(episode_df.index) + 1)
-print(episode_df.head(10))
-print(episode_df.tail(10))
-print(episode_df.columns)
-print(len(episode_df.index))
-
-# write the table to a csv
-episode_df.to_csv('../data/episode_df.csv', sep=',')
-
-
+# print('Fetching episode table...')
+# # use requests library to get the main page content
+# r = requests.get('https://en.wikipedia.org/wiki/List_of_Star_Trek:_The_Next_Generation_episodes').text
+# # use BS4 to locate the div with class wikitable
+# r_soup = BeautifulSoup(r, 'html.parser')
+# wiki_tables = r_soup.find_all('table', {"class": "wikitable"})
+# num_seasons = 7
+# episode_df = pd.DataFrame()
+# for i in range(1, num_seasons + 1):
+#     print(i)
+#     season = pd.read_html(str(wiki_tables[i]))
+#     season_df = pd.DataFrame(season[0])
+#     season_df.columns = season_df.iloc[0]
+#     season_df = season_df.ix[1:]
+#     episode_df = pd.concat([episode_df, season_df])
+#
+# episode_df = pd.DataFrame(episode_df)
+# episode_df['merge_index'] = range(1, len(episode_df.index) + 1)
+# print(episode_df.head(10))
+# print(episode_df.tail(10))
+# print(episode_df.columns)
+# print(len(episode_df.index))
+#
+# # write the table to a csv
+# episode_df.to_csv('../data/episode_df.csv', sep=',')
 
 
 # # load any nltk tools we will use
@@ -488,6 +486,14 @@ episode_df.to_csv('../data/episode_df.csv', sep=',')
 #
 # # write this to a csv file
 # scripts_character_df.to_csv('../data/scripts_character_df.csv', sep=',')
+
+
+## merge the episode dataframe with the scripts_character_df dataframe
+# scripts_character_df = pd.read_csv('../data/scripts_character_df.csv')
+# episode_df = pd.read_csv('../data/episode_df.csv')
+# scripts_character_episode_df = pd.merge(scripts_character_df, episode_df, left_on='episode', right_on='merge_index')
+# scripts_character_episode_df.to_csv('../data/scripts_character_episode_df.csv', sep=',')
+
 
 ## then do some count stuff
 ## count the occurrences of make it so in each episode, similarly engage
