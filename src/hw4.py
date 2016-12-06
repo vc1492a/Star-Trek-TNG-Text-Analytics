@@ -498,27 +498,62 @@ from collections import Counter
 ###### AGGRESSIVE WORDS ######
 ##############################
 
-
-## Read the final dataset
-scripts_character_episode_df = pd.read_csv('../data/scripts_character_episode_df.csv', sep = ',')
-
-""" LIST OF WORDS """
-list_aggressive = set(['photon', 'phaser', 'shields', 'alert', 'red', 'yellow', 'kill', 'attack', 'enemy', 'damage', 'photons', 'phasers', 'shield', 'gun', 'guns', 'kills', 'stun', 'stuns', 'stunned', 'breach', 'explosion' ,'explosions', 'breached', 'die' ,'dead' ,'injury' ,'injured', 'attacked', 'laser' ,'pulse' ,'cannon', 'plasma', 'phase', 'cannons', 'disruptor', 'torpedo', 'torpedoes', 'rifle', 'rifles', 'shoot', 'shot', 'combat', 'fight', 'knife', 'katana', 'mine', 'mines', 'armour'])
-
-# Lower case the tokens
-scripts_character_episode_df.tokens = [x.lower() for x in scripts_character_episode_df.tokens]
-
-# Filter out words that are not 'aggressive words'
-scripts_character_episode_df['Aggressive_Words'] = scripts_character_episode_df['sentence'].apply(lambda x: [item for item in x.split(' ') if (item in list_aggressive)])
-
-# Remove rows with empty results
-aggressiveWords_df = scripts_character_episode_df[(scripts_character_episode_df.astype(str)['Aggressive_Words'] != '[]')]
-aggressiveWords_df['Count_Aggressive_Words'] = aggressiveWords_df["Aggressive_Words"].str.len()
-
-aggressiveWords_df.to_csv("../data/Aggressive_Words.csv")
+#
+# ## Read the final dataset
+# scripts_character_episode_df = pd.read_csv('../data/scripts_character_episode_df.csv', sep = ',')
+#
+# """ LIST OF WORDS """
+# list_aggressive = set(['photon', 'phaser', 'shields', 'alert', 'red', 'yellow', 'kill', 'attack', 'enemy', 'damage', 'photons', 'phasers', 'shield', 'gun', 'guns', 'kills', 'stun', 'stuns', 'stunned', 'breach', 'explosion' ,'explosions', 'breached', 'die' ,'dead' ,'injury' ,'injured', 'attacked', 'laser' ,'pulse' ,'cannon', 'plasma', 'phase', 'cannons', 'disruptor', 'torpedo', 'torpedoes', 'rifle', 'rifles', 'shoot', 'shot', 'combat', 'fight', 'knife', 'katana', 'mine', 'mines', 'armour'])
+#
+# # Lower case the tokens
+# scripts_character_episode_df.tokens = [x.lower() for x in scripts_character_episode_df.tokens]
+#
+# # Filter out words that are not 'aggressive words'
+# scripts_character_episode_df['Aggressive_Words'] = scripts_character_episode_df['sentence'].apply(lambda x: [item for item in x.split(' ') if (item in list_aggressive)])
+#
+# # Remove rows with empty results
+# aggressiveWords_df = scripts_character_episode_df[(scripts_character_episode_df.astype(str)['Aggressive_Words'] != '[]')]
+# aggressiveWords_df['Count_Aggressive_Words'] = aggressiveWords_df["Aggressive_Words"].str.len()
+#
+# aggressiveWords_df.to_csv("../data/Aggressive_Words.csv")
 
 # then do some count stuff
 # count the occurrences of make it so in each episode, similarly engage
 # avg warp speed over time
 # % share of speaking time by character
 #
+
+
+#######################
+###### MEME TIME ######
+#######################
+
+## Read the final dataset
+scripts_character_episode_df = pd.read_csv('../data/scripts_character_episode_df.csv', sep = ',')
+
+"""
+MAKE IT SO
+ENGAGE
+ENERGIZE
+SET PHASERS TO STUN
+"""
+# Set sentence to lower
+scripts_character_episode_df.sentence = scripts_character_episode_df.sentence.str.lower()
+
+# Check if it contains a meme
+makeItSo_meme = scripts_character_episode_df[scripts_character_episode_df.sentence.str.contains("make it so")].copy()
+engage_meme = scripts_character_episode_df[scripts_character_episode_df.sentence.str.contains("engage")].copy()
+energize_meme = scripts_character_episode_df[scripts_character_episode_df.sentence.str.contains("energize")].copy()
+setPhasers_meme = scripts_character_episode_df[scripts_character_episode_df.sentence.str.contains("set phasers")].copy()
+
+makeItSo_meme.to_csv("../data/meme/MakeItSo.csv")
+engage_meme.to_csv("../data/meme/engage_meme.csv")
+energize_meme.to_csv("../data/meme/energize_meme.csv")
+setPhasers_meme.to_csv("../data/meme/setPhasers_meme.csv")
+
+
+
+# print(len(makeItSo_meme))
+# print(len(engage_meme))
+# print(len(energize_meme))
+# print(setPhasers_meme.sentence)
