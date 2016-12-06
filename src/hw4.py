@@ -498,24 +498,30 @@ from collections import Counter
 ###### AGGRESSIVE WORDS ######
 ##############################
 
-#
-# ## Read the final dataset
-# scripts_character_episode_df = pd.read_csv('../data/scripts_character_episode_df.csv', sep = ',')
-#
-# """ LIST OF WORDS """
-# list_aggressive = set(['photon', 'phaser', 'shields', 'alert', 'red', 'yellow', 'kill', 'attack', 'enemy', 'damage', 'photons', 'phasers', 'shield', 'gun', 'guns', 'kills', 'stun', 'stuns', 'stunned', 'breach', 'explosion' ,'explosions', 'breached', 'die' ,'dead' ,'injury' ,'injured', 'attacked', 'laser' ,'pulse' ,'cannon', 'plasma', 'phase', 'cannons', 'disruptor', 'torpedo', 'torpedoes', 'rifle', 'rifles', 'shoot', 'shot', 'combat', 'fight', 'knife', 'katana', 'mine', 'mines', 'armour'])
-#
-# # Lower case the tokens
-# scripts_character_episode_df.tokens = [x.lower() for x in scripts_character_episode_df.tokens]
-#
-# # Filter out words that are not 'aggressive words'
-# scripts_character_episode_df['Aggressive_Words'] = scripts_character_episode_df['sentence'].apply(lambda x: [item for item in x.split(' ') if (item in list_aggressive)])
-#
-# # Remove rows with empty results
-# aggressiveWords_df = scripts_character_episode_df[(scripts_character_episode_df.astype(str)['Aggressive_Words'] != '[]')]
-# aggressiveWords_df['Count_Aggressive_Words'] = aggressiveWords_df["Aggressive_Words"].str.len()
-#
-# aggressiveWords_df.to_csv("../data/Aggressive_Words.csv")
+
+## Read the final dataset
+scripts_character_episode_df = pd.read_csv('../data/scripts_character_episode_df.csv', sep = ',')
+
+""" LIST OF WORDS """
+list_aggressive = set(['photon', 'phaser', 'shields', 'alert', 'red', 'yellow', 'kill', 'attack', 'enemy', 'damage', 'photons', 'phasers', 'shield', 'gun', 'guns', 'kills', 'stun', 'stuns', 'stunned', 'breach', 'explosion' ,'explosions', 'breached', 'die' ,'dead' ,'injury' ,'injured', 'attacked', 'laser' ,'pulse' ,'cannon', 'plasma', 'phase', 'cannons', 'disruptor', 'torpedo', 'torpedoes', 'rifle', 'rifles', 'shoot', 'shot', 'combat', 'fight', 'knife', 'katana', 'mine', 'mines', 'armour'])
+
+# Lower case the tokens
+scripts_character_episode_df.tokens = [x.lower() for x in scripts_character_episode_df.tokens]
+
+# Filter out words that are not 'aggressive words'
+scripts_character_episode_df['Aggressive_Words'] = scripts_character_episode_df['sentence'].apply(lambda x: [item for item in x.split(' ') if (item in list_aggressive)])
+
+# Remove rows with empty results
+aggressiveWords_df = scripts_character_episode_df[(scripts_character_episode_df.astype(str)['Aggressive_Words'] != '[]')]
+aggressiveWords_df['Count_Aggressive_Words'] = aggressiveWords_df["Aggressive_Words"].str.len()
+
+aggressiveWords_df_final = scripts_character_episode_df.merge(aggressiveWords_df, on='sentence', how='left')
+aggressiveWords_df_final.Count_Aggressive_Words = aggressiveWords_df_final.Count_Aggressive_Words.fillna(value=0)
+
+# print(aggressiveWords_df_final[aggressiveWords_df_final.Count_Aggressive_Words > 0])
+# print(aggressiveWords_df_final.columns)
+
+aggressiveWords_df.to_csv("../data/Aggressive_Words.csv")
 
 # then do some count stuff
 # count the occurrences of make it so in each episode, similarly engage
@@ -527,45 +533,45 @@ from collections import Counter
 #######################
 ###### MEME TIME ######
 #######################
-
-## Read the final dataset
-scripts_character_episode_df = pd.read_csv('../data/scripts_character_episode_df.csv', sep = ',')
-
-"""
-MAKE IT SO
-ENGAGE
-ENERGIZE
-SET PHASERS TO STUN
-"""
-# Set sentence to lower
-scripts_character_episode_df.sentence = scripts_character_episode_df.sentence.str.lower()
-
-# Check if it contains a meme
-makeItSo_meme = scripts_character_episode_df.copy()
-makeItSo_meme['MakeItSoCount'] = 0
-makeItSo_meme.loc[makeItSo_meme.sentence.str.contains("make it so"), 'MakeItSoCount'] = 1
-
-engage_meme = scripts_character_episode_df.copy()
-engage_meme['EngageCount'] = 0
-engage_meme.loc[engage_meme.sentence.str.contains("engage"), 'EngageCount'] = 1
-
-energize_meme = scripts_character_episode_df.copy()
-energize_meme['EnergizeCount'] = 0
-energize_meme.loc[energize_meme.sentence.str.contains("energize"), 'EnergizeCount'] = 1
-
-setPhasers_meme = scripts_character_episode_df.copy()
-setPhasers_meme['SetPhaserCount'] = 0
-setPhasers_meme.loc[setPhasers_meme.sentence.str.contains("set phaser"), 'SetPhaserCount'] = 1
-
-# Join the tables
-# scripts_character_df = pd.merge(scripts_df_withCharName, character_df, left_on='characterName', right_on='character_name')
-
-memeTable = makeItSo_meme.copy()
-memeTable['EngageCount'] = engage_meme['EngageCount']
-memeTable['EnergizeCount'] =energize_meme['EnergizeCount']
-memeTable['SetPhaserCount'] = setPhasers_meme['SetPhaserCount']
-
-memeTable.to_csv("../data/meme/memeTable.csv")
+#
+# ## Read the final dataset
+# scripts_character_episode_df = pd.read_csv('../data/scripts_character_episode_df.csv', sep = ',')
+#
+# """
+# MAKE IT SO
+# ENGAGE
+# ENERGIZE
+# SET PHASERS TO STUN
+# """
+# # Set sentence to lower
+# scripts_character_episode_df.sentence = scripts_character_episode_df.sentence.str.lower()
+#
+# # Check if it contains a meme
+# makeItSo_meme = scripts_character_episode_df.copy()
+# makeItSo_meme['MakeItSoCount'] = 0
+# makeItSo_meme.loc[makeItSo_meme.sentence.str.contains("make it so"), 'MakeItSoCount'] = 1
+#
+# engage_meme = scripts_character_episode_df.copy()
+# engage_meme['EngageCount'] = 0
+# engage_meme.loc[engage_meme.sentence.str.contains("engage"), 'EngageCount'] = 1
+#
+# energize_meme = scripts_character_episode_df.copy()
+# energize_meme['EnergizeCount'] = 0
+# energize_meme.loc[energize_meme.sentence.str.contains("energize"), 'EnergizeCount'] = 1
+#
+# setPhasers_meme = scripts_character_episode_df.copy()
+# setPhasers_meme['SetPhaserCount'] = 0
+# setPhasers_meme.loc[setPhasers_meme.sentence.str.contains("set phaser"), 'SetPhaserCount'] = 1
+#
+# # Join the tables
+# # scripts_character_df = pd.merge(scripts_df_withCharName, character_df, left_on='characterName', right_on='character_name')
+#
+# memeTable = makeItSo_meme.copy()
+# memeTable['EngageCount'] = engage_meme['EngageCount']
+# memeTable['EnergizeCount'] =energize_meme['EnergizeCount']
+# memeTable['SetPhaserCount'] = setPhasers_meme['SetPhaserCount']
+#
+# memeTable.to_csv("../data/meme/memeTable.csv")
 
 # makeItSo_meme.to_csv("../data/meme/MakeItSo.csv")
 # engage_meme.to_csv("../data/meme/engage_meme.csv")
