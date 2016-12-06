@@ -17,7 +17,7 @@ from nltk.sentiment import SentimentIntensityAnalyzer
 import difflib
 import numpy as np
 from pprint import pprint
-
+from collections import Counter
 
 """
 @todo:
@@ -466,11 +466,11 @@ from pprint import pprint
 #             continue
 #
 # merged_data.to_csv("../data/script_df_withCharName.csv")
-#
+# #
 # pprint(merged_data)
-
+#
 # read in the script data with the character names
-
+#
 # scripts_df_withCharName = pd.read_csv('../data/script_df_withCharName.csv')
 # print(scripts_df_withCharName.head(10))
 # print(scripts_df_withCharName.columns)
@@ -488,15 +488,37 @@ from pprint import pprint
 # scripts_character_df.to_csv('../data/scripts_character_df.csv', sep=',')
 
 
-## merge the episode dataframe with the scripts_character_df dataframe
+# # merge the episode dataframe with the scripts_character_df dataframe
 # scripts_character_df = pd.read_csv('../data/scripts_character_df.csv')
 # episode_df = pd.read_csv('../data/episode_df.csv')
 # scripts_character_episode_df = pd.merge(scripts_character_df, episode_df, left_on='episode', right_on='merge_index')
 # scripts_character_episode_df.to_csv('../data/scripts_character_episode_df.csv', sep=',')
 
+##############################
+###### AGGRESSIVE WORDS ######
+##############################
 
-## then do some count stuff
-## count the occurrences of make it so in each episode, similarly engage
-## avg warp speed over time
-## % share of speaking time by character
-##
+
+## Read the final dataset
+scripts_character_episode_df = pd.read_csv('../data/scripts_character_episode_df.csv', sep = ',')
+
+""" LIST OF WORDS """
+list_aggressive = set(['photon', 'phaser', 'shields', 'alert', 'red', 'yellow', 'kill', 'attack', 'enemy', 'damage', 'photons', 'phasers', 'shield', 'gun', 'guns', 'kills', 'stun', 'stuns', 'stunned', 'breach', 'explosion' ,'explosions', 'breached', 'die' ,'dead' ,'injury' ,'injured', 'attacked', 'laser' ,'pulse' ,'cannon', 'plasma', 'phase', 'cannons', 'disruptor', 'torpedo', 'torpedoes', 'rifle', 'rifles', 'shoot', 'shot', 'combat', 'fight', 'knife', 'katana', 'mine', 'mines', 'armour'])
+
+# Lower case the tokens
+scripts_character_episode_df.tokens = [x.lower() for x in scripts_character_episode_df.tokens]
+
+# Filter out words that are not 'aggressive words'
+scripts_character_episode_df['Aggressive_Words'] = scripts_character_episode_df['sentence'].apply(lambda x: [item for item in x.split(' ') if (item in list_aggressive)])
+
+# Remove rows with empty results
+aggressiveWords_df = scripts_character_episode_df[(scripts_character_episode_df.astype(str)['Aggressive_Words'] != '[]')]
+aggressiveWords_df['Count_Aggressive_Words'] = aggressiveWords_df["Aggressive_Words"].str.len()
+
+aggressiveWords_df.to_csv("../data/Aggressive_Words.csv")
+
+# then do some count stuff
+# count the occurrences of make it so in each episode, similarly engage
+# avg warp speed over time
+# % share of speaking time by character
+#
