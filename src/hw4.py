@@ -557,14 +557,25 @@ setPhasers_meme = scripts_character_episode_df.copy()
 setPhasers_meme['SetPhaserCount'] = 0
 setPhasers_meme.loc[setPhasers_meme.sentence.str.contains("set phaser"), 'SetPhaserCount'] = 1
 
+# Join the tables
+# scripts_character_df = pd.merge(scripts_df_withCharName, character_df, left_on='characterName', right_on='character_name')
 
-makeItSo_meme.to_csv("../data/meme/MakeItSo.csv")
-engage_meme.to_csv("../data/meme/engage_meme.csv")
-energize_meme.to_csv("../data/meme/energize_meme.csv")
-setPhasers_meme.to_csv("../data/meme/setPhasers_meme.csv")
+memeTable = makeItSo_meme.copy()
+memeTable['EngageCount'] = engage_meme['EngageCount']
+memeTable['EnergizeCount'] =energize_meme['EnergizeCount']
+memeTable['SetPhaserCount'] = setPhasers_meme['SetPhaserCount']
 
-### TEST 
-# print(setPhasers_meme.sentence[setPhasers_meme.SetPhaserCount == 1])
+memeTable.to_csv("../data/meme/memeTable.csv")
+
+# makeItSo_meme.to_csv("../data/meme/MakeItSo.csv")
+# engage_meme.to_csv("../data/meme/engage_meme.csv")
+# energize_meme.to_csv("../data/meme/energize_meme.csv")
+# setPhasers_meme.to_csv("../data/meme/setPhasers_meme.csv")
+#
+
+
+### TEST
+# print(memeTable.loc[memeTable.MakeItSoCount == 1 ])
 # print(len(makeItSo_meme))
 # print(len(engage_meme))
 # print(len(energize_meme))
