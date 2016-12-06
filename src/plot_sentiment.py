@@ -159,9 +159,49 @@ mean_sentiment_by_character_plot = plotly_line_multi(
 
 
 
+################# ELIE PLOTLY TEST
+
+## GET THE COUNT OF AGGRESSIV WORDS BEING USED ACCROSS THE EPISODES.
+aggressive_count = main.copy()
+
+# group by character and show the mean character sentiment by episode
+# average the sentiment across episodes
+episode_char_groupby = main.copy()
+# print(character_groupby.head(100))
+episode_char_groupby = episode_char_groupby.groupby(['episode', 'character_name'], sort=True).mean().reset_index()
+episode_char_groupby = pd.DataFrame(episode_char_groupby)
 
 
+def plotly_line_multi(dataset, x, y, group, main_title, file_title, num_episodes):
+    # get list of sentiment values by character name
+    cat_list = episode_char_groupby['character_name'].unique()
+    data = []
+    for entry in cat_list:
+        if len(dataset[dataset['character_name'] == entry]['episode'].values) > num_episodes:
+            y = dataset[dataset['character_name'] == entry]['sentiment'].values
+            x = dataset[dataset['character_name'] == entry]['episode'].values
+            entry = (go.Scatter(
+                x=x,
+                y=y,
+                mode='lines',
+                name=entry
+            ))
+            data.append(entry)
+        else:
+            continue
+    layout = go.Layout(
+        title=main_title
+    )
+    fig = go.Figure(data=data, layout=layout)
+    return py.plot(fig, filename=file_title)
 
 
-
-
+mean_sentiment_by_character_plot = plotly_line_multi(
+    episode_char_groupby,
+    '',
+    '',
+    '',
+    'Mean Character Sentiment by Episode',
+    'Mean Character Sentiment by Episode',
+    150
+)

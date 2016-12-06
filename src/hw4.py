@@ -546,12 +546,15 @@ engage_meme = scripts_character_episode_df[scripts_character_episode_df.sentence
 energize_meme = scripts_character_episode_df[scripts_character_episode_df.sentence.str.contains("energize")].copy()
 setPhasers_meme = scripts_character_episode_df[scripts_character_episode_df.sentence.str.contains("set phasers")].copy()
 
+makeItSo_meme['MakeItSoCount'] = 1
+engage_meme['EngageCount'] = 1
+energize_meme['EnergizeCount'] = 1
+setPhasers_meme['SetPhaserCount'] = 1
+
 makeItSo_meme.to_csv("../data/meme/MakeItSo.csv")
 engage_meme.to_csv("../data/meme/engage_meme.csv")
 energize_meme.to_csv("../data/meme/energize_meme.csv")
 setPhasers_meme.to_csv("../data/meme/setPhasers_meme.csv")
-
-
 
 # print(len(makeItSo_meme))
 # print(len(engage_meme))
