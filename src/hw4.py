@@ -541,21 +541,30 @@ SET PHASERS TO STUN
 scripts_character_episode_df.sentence = scripts_character_episode_df.sentence.str.lower()
 
 # Check if it contains a meme
-makeItSo_meme = scripts_character_episode_df[scripts_character_episode_df.sentence.str.contains("make it so")].copy()
-engage_meme = scripts_character_episode_df[scripts_character_episode_df.sentence.str.contains("engage")].copy()
-energize_meme = scripts_character_episode_df[scripts_character_episode_df.sentence.str.contains("energize")].copy()
-setPhasers_meme = scripts_character_episode_df[scripts_character_episode_df.sentence.str.contains("set phasers")].copy()
+makeItSo_meme = scripts_character_episode_df.copy()
+makeItSo_meme['MakeItSoCount'] = 0
+makeItSo_meme.loc[makeItSo_meme.sentence.str.contains("make it so"), 'MakeItSoCount'] = 1
 
-makeItSo_meme['MakeItSoCount'] = 1
-engage_meme['EngageCount'] = 1
-energize_meme['EnergizeCount'] = 1
-setPhasers_meme['SetPhaserCount'] = 1
+engage_meme = scripts_character_episode_df.copy()
+engage_meme['EngageCount'] = 0
+engage_meme.loc[engage_meme.sentence.str.contains("engage"), 'EngageCount'] = 1
+
+energize_meme = scripts_character_episode_df.copy()
+energize_meme['EnergizeCount'] = 0
+energize_meme.loc[energize_meme.sentence.str.contains("energize"), 'EnergizeCount'] = 1
+
+setPhasers_meme = scripts_character_episode_df.copy()
+setPhasers_meme['SetPhaserCount'] = 0
+setPhasers_meme.loc[setPhasers_meme.sentence.str.contains("set phaser"), 'SetPhaserCount'] = 1
+
 
 makeItSo_meme.to_csv("../data/meme/MakeItSo.csv")
 engage_meme.to_csv("../data/meme/engage_meme.csv")
 energize_meme.to_csv("../data/meme/energize_meme.csv")
 setPhasers_meme.to_csv("../data/meme/setPhasers_meme.csv")
 
+### TEST 
+# print(setPhasers_meme.sentence[setPhasers_meme.SetPhaserCount == 1])
 # print(len(makeItSo_meme))
 # print(len(engage_meme))
 # print(len(energize_meme))
