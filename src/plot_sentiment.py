@@ -8,23 +8,23 @@ py.sign_in('vc1492a', 'g3c3nky1sj')
 
 # let's plot the sentiment from the scripts df for now and then used the merge one later
 
-# load the main dataframe
-main = pd.read_csv('../data/scripts_character_df.csv')
-main = main.drop(main.columns[[0]], axis=1)
-# print(main.head(10))
-
-# NOTE: right now our naive algorithm mis-classifies deanna troi as lwaxana troi. Recode for now, but deal with later.
-main = main.replace('lwaxana troi', 'deanna troi')
-# NOTE: number one is the same as william riker (context)
-main = main.replace('number one', 'william riker')
-
-
-# average the sentiment across episodes
-episode_groupby = main.copy()
-# print(character_groupby.head(100))
-episode_groupby = episode_groupby.groupby(['episode'], sort=True).mean()
-# order by the highest average token count
-# print(episode_groupby)
+# # load the main dataframe
+# main = pd.read_csv('../data/scripts_character_df.csv')
+# main = main.drop(main.columns[[0]], axis=1)
+# # print(main.head(10))
+#
+# # NOTE: right now our naive algorithm mis-classifies deanna troi as lwaxana troi. Recode for now, but deal with later.
+# main = main.replace('lwaxana troi', 'deanna troi')
+# # NOTE: number one is the same as william riker (context)
+# main = main.replace('number one', 'william riker')
+#
+#
+# # average the sentiment across episodes
+# episode_groupby = main.copy()
+# # print(character_groupby.head(100))
+# episode_groupby = episode_groupby.groupby(['episode'], sort=True).mean()
+# # order by the highest average token count
+# # print(episode_groupby)
 
 
 # plot the average token count of each episode
@@ -57,15 +57,15 @@ def plotly_line_dual_ax(y1, y2, x, y1_title, y2_title, main_title, file_title):
     return py.plot(fig, filename=file_title)
 
 
-mean_token_sentiment_plot = plotly_line_dual_ax(
-    episode_groupby['token_count'],
-    episode_groupby['sentiment'],
-    episode_groupby.index,
-    'Mean Token Count',
-    'Mean Sentiment',
-    'Mean Token Count and Sentiment by Episode',
-    'Mean Token Count and Sentiment by Episode'
-)
+# mean_token_sentiment_plot = plotly_line_dual_ax(
+#     episode_groupby['token_count'],
+#     episode_groupby['sentiment'],
+#     episode_groupby.index,
+#     'Mean Token Count',
+#     'Mean Sentiment',
+#     'Mean Token Count and Sentiment by Episode',
+#     'Mean Token Count and Sentiment by Episode'
+# )
 
 # the graph someone shows that the average token count and average sentiment follow roughly the same path
 # that's interesting, as it suggests episodes with more spoken word are also more positive
@@ -95,15 +95,15 @@ mean_token_sentiment_plot = plotly_line_dual_ax(
 
 # group by character and show the mean character sentiment by episode
 # average the sentiment across episodes
-episode_char_groupby = main.copy()
-# print(character_groupby.head(100))
-episode_char_groupby = episode_char_groupby.groupby(['episode', 'character_name'], sort=True).mean().reset_index()
-episode_char_groupby = pd.DataFrame(episode_char_groupby)
+# episode_char_groupby = main.copy()
+# # print(character_groupby.head(100))
+# episode_char_groupby = episode_char_groupby.groupby(['episode', 'character_name'], sort=True).mean().reset_index()
+# episode_char_groupby = pd.DataFrame(episode_char_groupby)
 
 
 def plotly_line_multi(dataset, x, y, group, main_title, file_title, num_episodes):
     # get list of sentiment values by character name
-    cat_list = episode_char_groupby['character_name'].unique()
+    cat_list = dataset['character_name'].unique()
     data = []
     for entry in cat_list:
         if len(dataset[dataset['character_name'] == entry]['episode'].values) > num_episodes:
@@ -125,15 +125,15 @@ def plotly_line_multi(dataset, x, y, group, main_title, file_title, num_episodes
     return py.plot(fig, filename=file_title)
 
 
-mean_sentiment_by_character_plot = plotly_line_multi(
-    episode_char_groupby,
-    '',
-    '',
-    '',
-    'Mean Character Sentiment by Episode',
-    'Mean Character Sentiment by Episode',
-    150
-)
+# mean_sentiment_by_character_plot = plotly_line_multi(
+#     episode_char_groupby,
+#     '',
+#     '',
+#     '',
+#     'Mean Character Sentiment by Episode',
+#     'Mean Character Sentiment by Episode',
+#     150
+# )
 
 # do a rolling mean by character
 # rol_mean_episode_char_groupby = pd.DataFrame.rolling(episode_char_groupby, 5).mean()
@@ -158,5 +158,70 @@ mean_sentiment_by_character_plot = plotly_line_multi(
 # group characters and show token counts by episode
 
 
+# group by species and plot sentiment
+# episode_species_groupby = main.copy()
+# # print(character_groupby.head(100))
+# episode_species_groupby = episode_species_groupby.groupby(['episode', 'species'], sort=True).mean().reset_index()
+# episode_species_groupby = pd.DataFrame(episode_species_groupby)
+# print(episode_species_groupby)
 
-################# ELIE PLOTLY TEST
+
+def plotly_line_multi_b(dataset, x, y, group, main_title, file_title, num_episodes):
+    # get list of sentiment values by character name
+    cat_list = dataset['species'].unique()
+    data = []
+    for entry in cat_list:
+        if len(dataset[dataset['species'] == entry]['episode'].values) > num_episodes:
+            y = dataset[dataset['species'] == entry]['sentiment'].values
+            x = dataset[dataset['species'] == entry]['episode'].values
+            entry = (go.Scatter(
+                x=x,
+                y=y,
+                mode='markers',
+                name=entry
+            ))
+            data.append(entry)
+        else:
+            continue
+    layout = go.Layout(
+        title=main_title
+    )
+    fig = go.Figure(data=data, layout=layout)
+    return py.plot(fig, filename=file_title)
+
+
+# mean_sentiment_by_species_plot = plotly_line_multi_b(
+#     episode_species_groupby,
+#     '',
+#     '',
+#     '',
+#     'Mean Species Sentiment by Episode',
+#     'Mean Species Sentiment by Episode',
+#     150
+# )
+
+
+## read in the meme table
+
+meme = pd.read_csv('../data/meme/memeTable.csv', low_memory=False)
+# print(meme.columns)
+# print(meme.head(10))
+
+## grouping
+meme_groupby = meme.groupby(['episode'], sort=True).sum().reset_index()
+meme_groupby = pd.DataFrame(meme_groupby)
+
+print(meme_groupby)
+
+# plot the counts of make it so over the episode
+# Create a trace
+trace = go.Bar(
+    x=meme_groupby['episode'],
+    y=meme_groupby['MakeItSoCount'],
+)
+layout = go.Layout(
+    title='Count of "Energize" By Episode'
+)
+data = [trace]
+fig = go.Figure(data=data, layout=layout)
+py.plot(fig, filename='make-it-so')
